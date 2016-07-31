@@ -1,0 +1,13 @@
+{
+    "require": {
+        "vlucas/phpdotenv": "dev-master",
+        "twig/twig": "~1.0",
+        "bramus/router": "~1.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "Core\\": "app/core",
+            "Controller\\": "app/controllers"
+       	}
+    }
+}

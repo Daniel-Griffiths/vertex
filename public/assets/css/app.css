@@ -1,0 +1,40 @@
+*{
+	box-sizing: border-box;
+	padding:0;
+	margin:0;
+}
+
+body,html{
+    background: #f1f1f1;
+    color: #888;
+	text-align: center;
+	height: 100%;
+	font-family: 'Lato', sans-serif;
+	font-size:2em;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+}
+
+h1,p{
+	animation: fadeIn 1s;
+	animation-fill-mode: forwards;
+}
+
+h1{
+	font-size: 2em;
+    text-transform: uppercase;
+    letter-spacing: 0.3em;
+}
+
+p{
+	font-weight: 100;
+	animation-delay: 0.2s;
+	opacity: 0;
+}
+
+@keyframes fadeIn{
+	from{ opacity: 0;  }
+	to{ opacity: 1; }
+}

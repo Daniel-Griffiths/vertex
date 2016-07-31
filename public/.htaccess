@@ -1,0 +1,52 @@
+#-----------------------------------------------------------
+# Route everything through the index.php file
+#-----------------------------------------------------------
+
+<IfModule mod_rewrite.c>
+	RewriteEngine On
+	RewriteBase /
+	RewriteRule ^index\.php$ - [L]
+	RewriteCond %{REQUEST_FILENAME} !-f
+	RewriteCond %{REQUEST_FILENAME} !-d
+	RewriteRule . /index.php [L]
+</IfModule>
+
+#-----------------------------------------------------------
+# Compression
+#-----------------------------------------------------------
+
+<IfModule mod_deflate.c>
+    AddOutputFilter DEFLATE js css
+    AddOutputFilterByType DEFLATE text/html text/plain text/xml application/xml
+    BrowserMatch ^Mozilla/4 gzip-only-text/html
+    BrowserMatch ^Mozilla/4\.0[678] no-gzip
+    BrowserMatch \bMSIE !no-gzip !gzip-only-text/html
+</IfModule>
+
+
+<IfModule mod_headers.c>
+  <FilesMatch "\.(js|css|xml|gz|html)$">
+    Header append Vary: Accept-Encoding
+  </FilesMatch>
+</IfModule>
+
+#-----------------------------------------------------------
+# File caching times
+#-----------------------------------------------------------
+
+<IfModule mod_expires.c>
+  ExpiresActive On
+  ExpiresByType image/jpg "access 1 week"
+  ExpiresByType image/jpeg "access 1 week"
+  ExpiresByType image/gif "access 1 week"
+  ExpiresByType image/png "access 1 week"
+  ExpiresByType text/css "access 1 week"
+  ExpiresByType application/pdf "access 1 week"
+  ExpiresByType text/x-javascript "access 1 week"
+  ExpiresByType application/x-shockwave-flash "access 1 week"
+  ExpiresByType image/x-icon "access 1 week"
+</IfModule>
+
+
+
+
