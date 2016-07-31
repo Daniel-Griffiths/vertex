@@ -1,6 +1,9 @@
 # Vertex
 A simple PHP framework
 
+## Requirements
+Vertex makes use of composer to autoload its dependencies. Be sure to run the `composer install` after you download the framework. 
+
 ## Configuration
 All configuration options are specified in the `.env` file in the root directory. Currently this only contains database settings, however this will be expanded overtime.
 
