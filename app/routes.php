@@ -1,7 +1,5 @@
 <?php
 
-$route = New \Bramus\Router\Router();
-
 /*
 |--------------------------------------------------------------------------
 | Routes
@@ -28,5 +26,3 @@ $route->set404(function() {
     	'error_message' => 'Page Could Not Be Found'
     ]);
 });
-
-$route->run();

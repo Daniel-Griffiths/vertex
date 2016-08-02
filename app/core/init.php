@@ -17,6 +17,17 @@ session_start();
 
 /*
 |--------------------------------------------------------------------------
+| Import Namespaces
+|--------------------------------------------------------------------------
+|
+*/
+
+use Bramus\Router\Router; 
+use Dotenv\Dotenv;
+use Controller;		  
+
+/*
+|--------------------------------------------------------------------------
 | Load Vendor Code
 |--------------------------------------------------------------------------
 |
@@ -46,7 +57,7 @@ require __DIR__.'/functions.php';
 |
 */
 
-(new Dotenv\Dotenv(__DIR__.'/../..'))->load();
+(new Dotenv(__DIR__.'/../..'))->load();
 
 /*
 |--------------------------------------------------------------------------
@@ -91,7 +102,9 @@ $twig = new Twig_Environment(new Twig_Loader_Filesystem(__DIR__.'/../views/'), a
 |
 */
 
+$route = New Router();
 require __DIR__.'/../routes.php';
+$route->run();
 
 
 
