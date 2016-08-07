@@ -2,6 +2,9 @@
 
 namespace App\Core;
 
+use Twig_Loader_Filesystem;
+use Twig_Environment;
+
 class View
 {
 	/**
@@ -12,10 +15,8 @@ class View
 	 */
 	public static function render(string $view, array $parameters = [])
 	{
-		$twig = new \Twig_Environment(new \Twig_Loader_Filesystem(__DIR__.'/../views/'), array(
-		    //'cache' => __DIR__.'/cache/views/',
-		    'cache' => false,
-		));
+		$loader = new Twig_Loader_Filesystem(__DIR__.'/../views/');
+		$twig   = new Twig_Environment($loader, Config::get('view')['cache']);
 
 		$template = $twig->loadTemplate($view . '.html');
 		echo $template->render($parameters);
