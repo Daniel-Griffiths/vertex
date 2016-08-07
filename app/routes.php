@@ -16,7 +16,7 @@ use Vertex\Core\View;
 /* example of calling a controller */
 $route->get('/', '\Controller\HomeController@index');
 
-/* example of passing url paramters */
+/* example of passing url parameters */
 $route->get('post/(.*)', function($id){
 	echo 'post - ' . $id;
 });
