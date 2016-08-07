@@ -1,5 +1,7 @@
 <?php
 
+use App\Core\View as View;
+
 /*
 |--------------------------------------------------------------------------
 | Routes
@@ -21,7 +23,7 @@ $route->get('post/(.*)', function($id){
 
 /* example 404 page */
 $route->set404(function() {
-    return view('404',[
+    return View::render('404',[
     	'error_number' => '404',
     	'error_message' => 'Page Could Not Be Found'
     ]);

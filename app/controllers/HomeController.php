@@ -1,11 +1,15 @@
 <?php
+
 namespace Controller;
 
-class HomeController 
+use App\Core\Controller;
+use App\Core\View;
+
+class HomeController extends Controller
 {	
 	function index()
 	{
-		return view('welcome',[
+		return View::render('welcome',[
 			'title' => 'Vertex',
 			'tagline' => 'Build Something Amazing'
 		]);

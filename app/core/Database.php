@@ -1,10 +1,11 @@
 <?php
 
+namespace App\Core;
+
 class Database 
 {
-	
 	function __construct()
 	{
-		# code...
+		//method stub
 	}
 }
