@@ -2,8 +2,8 @@
 
 namespace Controller;
 
-use App\Core\Controller;
-use App\Core\View;
+use Vertex\Core\Controller;
+use Vertex\Core\View;
 
 class HomeController extends Controller
 {	

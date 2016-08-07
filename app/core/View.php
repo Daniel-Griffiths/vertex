@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Core;
+namespace Vertex\Core;
 
 use Twig_Loader_Filesystem;
 use Twig_Environment;

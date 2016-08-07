@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Core;
+namespace Vertex\Core;
 
 /**
  * Main Controller class that all

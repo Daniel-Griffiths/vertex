@@ -6,7 +6,7 @@
     },
     "autoload": {
         "psr-4": {
-            "App\\Core\\": "app/core",
+            "Vertex\\Core\\": "app/core",
             "Controller\\": "app/controllers"
        	}
     }

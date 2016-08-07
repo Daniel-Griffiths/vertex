@@ -28,7 +28,7 @@ session_start();
 */
 
 use Bramus\Router\Router; 	 
-use App\Core\Config; 
+use Vertex\Core\Config; 
 use Dotenv\Dotenv;
 
 /*
