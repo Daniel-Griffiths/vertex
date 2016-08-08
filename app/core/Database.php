@@ -15,7 +15,7 @@ class Database
                     $connection = 'mysql:host=' . $config['mysql']['host'] . ';dbname=' . $config['mysql']['database'] . $config['mysql']['username'] .$config['mysql']['password'];
                     break;
                 case 'sqlite':
-                    $connection = 'sqlite:' . __DIR__ . '/database/' . $config['mysql']['database'] . '.sqlite';
+                    $connection = 'sqlite:' . __DIR__ . '/database/' . $config['sqlite']['database'] . '.sqlite';
                     break;
                 default:
                     throw new Exception('Connection type not supported');
