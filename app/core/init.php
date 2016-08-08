@@ -28,6 +28,7 @@ session_start();
 */
 
 use Bramus\Router\Router;
+use Vertex\Core\Database;
 use Vertex\Core\Config;
 use Dotenv\Dotenv;
 
@@ -48,6 +49,15 @@ require __DIR__.'/../../vendor/autoload.php';
 */
 
 (new Dotenv(__DIR__.'/../..'))->load();
+
+/*
+|--------------------------------------------------------------------------
+| Connect to the Database
+|--------------------------------------------------------------------------
+|
+*/
+
+//(new Database)->connection(Config::get('database'));
 
 /*
 |--------------------------------------------------------------------------
