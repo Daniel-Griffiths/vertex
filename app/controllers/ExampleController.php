@@ -5,11 +5,11 @@ namespace Controller;
 use Vertex\Core\Controller;
 use Vertex\Core\View;
 
-class HomeController extends Controller
+class ExampleController extends Controller
 {
     public function index()
     {
-        return View::render('welcome', [
+        return View::render('example', [
             'title' => 'Vertex',
             'tagline' => 'Build Something Amazing'
         ]);
