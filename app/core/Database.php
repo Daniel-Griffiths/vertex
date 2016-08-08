@@ -2,10 +2,10 @@
 
 namespace Vertex\Core;
 
-class Database 
+class Database
 {
-	function __construct()
-	{
-		//method stub
-	}
+    public function __construct()
+    {
+        //method stub
+    }
 }

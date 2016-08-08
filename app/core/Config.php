@@ -7,15 +7,15 @@ namespace Vertex\Core;
  */
 class Config
 {
-	/**
-	 * Returns an array of all settings
-	 * from the specified file
-	 * 
-	 * @param  string $file 
-	 * @return array       
-	 */
-	public static function get(string $file)
-	{
-		return require __DIR__.'/../config/' . $file . '.php';
-	}
+    /**
+     * Returns an array of all settings
+     * from the specified file
+     * 
+     * @param  string $file 
+     * @return array       
+     */
+    public static function get(string $file)
+    {
+        return require __DIR__.'/../config/' . $file . '.php';
+    }
 }

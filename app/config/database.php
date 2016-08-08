@@ -12,8 +12,8 @@ return [
 |
 */
 
-	'connections' => [
-	    'sqlite' => [
+    'connections' => [
+        'sqlite' => [
             'database' => getenv('DB_DATABASE')
         ],
        'mysql' => [
@@ -23,5 +23,5 @@ return [
             'username' => getenv('DB_USERNAME'),
             'password' => getenv('DB_PASSWORD')
         ],
-	],
+    ],
 ];

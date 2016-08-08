@@ -27,8 +27,8 @@ session_start();
 |
 */
 
-use Bramus\Router\Router; 	 
-use Vertex\Core\Config; 
+use Bramus\Router\Router;
+use Vertex\Core\Config;
 use Dotenv\Dotenv;
 
 /*
@@ -58,9 +58,6 @@ require __DIR__.'/../../vendor/autoload.php';
 |
 */
 
-$route = New Router();
+$route = new Router();
 require __DIR__.'/../routes.php';
 $route->run();
-
-
-

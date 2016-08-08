@@ -17,14 +17,14 @@ use Vertex\Core\View;
 $route->get('/', '\Controller\HomeController@index');
 
 /* example of passing url parameters */
-$route->get('post/(.*)', function($id){
-	echo 'post - ' . $id;
+$route->get('post/(.*)', function ($id) {
+    echo 'post - ' . $id;
 });
 
 /* example 404 page */
-$route->set404(function() {
-    return View::render('404',[
-    	'error_number' => '404',
-    	'error_message' => 'Page Could Not Be Found'
+$route->set404(function () {
+    return View::render('404', [
+        'error_number' => '404',
+        'error_message' => 'Page Could Not Be Found'
     ]);
 });
