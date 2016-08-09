@@ -2,7 +2,8 @@
     "require": {
         "vlucas/phpdotenv": "dev-master",
         "twig/twig": "~1.0",
-        "bramus/router": "~1.0"
+        "bramus/router": "~1.0",
+        "phpunit/phpunit": "5.5.*"
     },
     "autoload": {
         "psr-4": {

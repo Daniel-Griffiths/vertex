@@ -5,8 +5,19 @@ namespace Vertex\Core;
 use Exception;
 use PDO;
 
+/**
+ * Database Class
+ */
 class Database
 {
+    /**
+     * Connect to the appropriate database
+     * based on the details specified in
+     * the configuration file
+     * 
+     * @param  array  $config 
+     * @return PDO       
+     */
     public function connection(array $config)
     {
         try {

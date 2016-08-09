@@ -5,6 +5,9 @@ namespace Vertex\Core;
 use Twig_Loader_Filesystem;
 use Twig_Environment;
 
+/**
+ * View Class
+ */
 class View
 {
     /**

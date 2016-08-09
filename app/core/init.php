@@ -57,7 +57,9 @@ require __DIR__.'/../../vendor/autoload.php';
 |
 */
 
-//$database = (new Database)->connection(Config::get('database'));
+// $database = (new Database)->connection(
+// 	Config::get('database')
+// );
 
 /*
 |--------------------------------------------------------------------------
