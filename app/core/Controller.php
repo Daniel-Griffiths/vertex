@@ -8,8 +8,12 @@ namespace Vertex\Core;
  */
 abstract class Controller
 {
+    protected $database;
+
     public function __construct()
     {
-        //method stub
+        $this->database = (new Database)->connection(
+            Config::get('database')
+        );
     }
 }

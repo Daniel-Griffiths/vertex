@@ -19,23 +19,32 @@ class Database
      * @return PDO       
      */
     public function connection(array $config)
-    {
-        try {
-            switch ($config['connection']) {
-                case 'mysql':
-                    $connection = 'mysql:host=' . $config['mysql']['host'] . ';dbname=' . $config['mysql']['database'];
-                    break;
-                case 'sqlite':
-                    $connection = 'sqlite:' . __DIR__ . '/database/' . $config['sqlite']['database'] . '.sqlite';
-                    break;
-                default:
-                    throw new Exception('Connection type not supported');
+    {   
+        if($config['enabled'] == true){
+            try {
+                $instance = new PDO($this->loadConfig($config),$config['mysql']['username'],$config['mysql']['password']);
+                $instance->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+                return $instance;
+            } catch (PDOException $e) {
+                die($e->getMessage());
             }
-            $instance = new PDO($connection,$config['mysql']['username'],$config['mysql']['password']);
-            $instance->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-            return $instance;
-        } catch (PDOException $e) {
-            die($e->getMessage());
         }
+    }
+
+    /**
+     * Load the configuration
+     * @param  array  $config 
+     * @return PDO
+     */
+    public function loadConfig(array $config)
+    {
+        switch ($config['connection']) {
+            case 'mysql':
+                return $connection = 'mysql:host=' . $config['mysql']['host'] . ';dbname=' . $config['mysql']['database'];
+            case 'sqlite':
+                return $connection = 'sqlite:' . __DIR__ . '/database/' . $config['sqlite']['database'] . '.sqlite';
+            default:
+                throw new Exception('Connection type not supported');
+        }        
     }
 }
