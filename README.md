@@ -7,7 +7,7 @@ Vertex makes use of composer to autoload its dependencies. Be sure to run the `c
 Once all the dependencies have been installed you can get started by pointing your server of choice to the `/public` directory. 
 
 ## Configuration
-All configuration options are specified in the `.env` file in the root directory. Currently this only contains database settings, however this will be expanded overtime.
+All configuration options are specified in the `.env` file in the root directory. By default a '.env.example' file is included, you can rename this to `.env` to get started.
 
 ## Routes
 Vertex uses Bramus's fantastic routing class. Routes are stored in the `app/routes.php` file. Please visit the following repo for full documentation  `https://github.com/bramus/router/`.
