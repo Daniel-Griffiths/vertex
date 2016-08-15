@@ -28,8 +28,6 @@ session_start();
 */
 
 use Bramus\Router\Router;
-use Vertex\Core\Database;
-use Vertex\Core\Config;
 use Dotenv\Dotenv;
 
 /*
