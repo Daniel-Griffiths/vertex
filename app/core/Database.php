@@ -23,7 +23,7 @@ class Database
         try {
             switch ($config['connection']) {
                 case 'mysql':
-                    $connection = 'mysql:host=' . $config['mysql']['host'] . ';dbname=' . $config['mysql']['database'] . $config['mysql']['username'] .$config['mysql']['password'];
+                    $connection = 'mysql:host=' . $config['mysql']['host'] . ';dbname=' . $config['mysql']['database'];
                     break;
                 case 'sqlite':
                     $connection = 'sqlite:' . __DIR__ . '/database/' . $config['sqlite']['database'] . '.sqlite';
@@ -31,7 +31,7 @@ class Database
                 default:
                     throw new Exception('Connection type not supported');
             }
-            $instance = new PDO($connection);
+            $instance = new PDO($connection,$config['mysql']['username'],$config['mysql']['password']);
             $instance->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
             return $instance;
         } catch (PDOException $e) {
