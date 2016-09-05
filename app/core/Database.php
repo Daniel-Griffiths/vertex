@@ -28,7 +28,7 @@ class Database
      */
     public function connection(array $config)
     {   
-        if($config['enabled'] == true){
+        if($config['enabled'] == 'true'){
             try {
                 $instance = new PDO($this->loadConfig($config),$config['mysql']['username'],$config['mysql']['password']);
                 $instance->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);

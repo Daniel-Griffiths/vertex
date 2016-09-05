@@ -19,8 +19,8 @@ abstract class Controller
 
     public function __construct()
     {
-        //$this->database = (new Database)->connection(
-        //    Config::get('database')
-        //);
+        $this->database = (new Database)->connection(
+           Config::get('database')
+        );
     }
 }
