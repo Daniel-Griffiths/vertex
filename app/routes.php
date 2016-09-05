@@ -13,18 +13,7 @@ use Vertex\Core\View;
 |
 */
 
-/* example of calling a controller */
-$route->get('/', '\Controller\ExampleController@index');
+$route->addRoute('GET', '/', 'ExampleController@index');
 
-/* example of passing url parameters */
-$route->get('post/(.*)', function ($id) {
-    echo 'post - ' . $id;
-});
-
-/* example 404 page */
-$route->set404(function () {
-    return View::render('404', [
-        'error_number' => '404',
-        'error_message' => 'Page Could Not Be Found'
-    ]);
-});
+//Example Controller with parameters
+//$route->addRoute('GET', '/news/{id:\+d}', 'NewsController@index');

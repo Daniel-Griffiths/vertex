@@ -7,8 +7,8 @@
 |
 */
 
-ini_set('display_errors', 1);
 ini_set('display_startup_errors', 1);
+ini_set('display_errors', 1);
 error_reporting(E_ALL);
 
 /*
@@ -27,7 +27,8 @@ session_start();
 |
 */
 
-use Bramus\Router\Router;
+use Vertex\Core\Router;
+use Vertex\Core\View;
 use Dotenv\Dotenv;
 
 /*
@@ -57,6 +58,11 @@ require __DIR__.'/../../vendor/autoload.php';
 |
 */
 
-$route = new Router();
-require __DIR__.'/../routes.php';
-$route->run();
+$router = new Router(
+	FastRoute\simpleDispatcher(function(FastRoute\RouteCollector $route){
+		require __DIR__.'/../routes.php';
+	})
+);
+
+$router->dispatch();
+
