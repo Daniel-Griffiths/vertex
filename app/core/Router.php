@@ -54,8 +54,16 @@ class Router
 			    ]);
 		        break;
 			case Dispatcher::FOUND:
-			    $handler = $this->routeInfo[1];
-			    $parameters = $this->routeInfo[2];        
+				$handler = $this->routeInfo[1];
+			    $parameters = $this->routeInfo[2];  
+
+			    /* its a closure */
+				if (is_callable($handler)) {
+					call_user_func_array($handler, $parameters);
+					break;
+				}      
+
+				/* its a class */
 			    list($class, $method) = explode("@", $handler, 2);
 			    $class = $this->namespace . $class;
 			    call_user_func_array(
