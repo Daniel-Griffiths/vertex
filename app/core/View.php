@@ -28,6 +28,6 @@ class View
         $twig   = new Twig_Environment($loader, Config::get('view')['cache']);
 
         $template = $twig->loadTemplate($view . '.html');
-        echo $template->render($parameters);
+        return $template->render($parameters);
     }
 }
