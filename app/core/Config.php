@@ -2,9 +2,15 @@
 
 namespace Vertex\Core;
 
-/**
- * Config Class
- */
+/*  
+|-------------------------------------------------------------------------- 
+| Config Class
+|--------------------------------------------------------------------------
+|
+| Simply deals with any and all things config related!
+|
+*/
+
 class Config
 {
     /**

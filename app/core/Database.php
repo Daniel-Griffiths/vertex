@@ -5,9 +5,17 @@ namespace Vertex\Core;
 use Exception;
 use PDO;
 
-/**
- * Database Class
- */
+/*  
+|-------------------------------------------------------------------------- 
+| Database Class
+|--------------------------------------------------------------------------
+|
+| Allows your app to connect to the database. You can 
+| disable this in the configuration file if 
+| database functionality is not needed.
+|
+*/
+
 class Database
 {
     /**

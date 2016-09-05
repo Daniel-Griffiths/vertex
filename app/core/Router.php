@@ -4,9 +4,15 @@ namespace Vertex\Core;
 
 use \FastRoute\Dispatcher;
 
-/**
- * Router Class
- */
+/*  
+|-------------------------------------------------------------------------- 
+| Router Class
+|--------------------------------------------------------------------------
+|
+| This acts as a simple wrapper around FastRoute
+|
+*/
+
 class Router
 {
 

@@ -2,10 +2,17 @@
 
 namespace Vertex\Core;
 
-/**
- * Main Controller class that all
- * other Controllers extend
- */
+/*  
+|-------------------------------------------------------------------------- 
+| Controller Class
+|--------------------------------------------------------------------------
+|
+| This is the base controller class which all other controllers
+| must extend. This allows us to inject any core functionaly 
+| which we may want to provide to the controllers.
+|
+*/
+
 abstract class Controller
 {
     protected $database;
