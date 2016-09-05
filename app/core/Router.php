@@ -59,14 +59,14 @@ class Router
 
 			    /* its a closure */
 				if (is_callable($handler)) {
-					call_user_func_array($handler, $parameters);
+					echo call_user_func_array($handler, $parameters);
 					break;
 				}      
 
 				/* its a class */
 			    list($class, $method) = explode("@", $handler, 2);
 			    $class = $this->namespace . $class;
-			    call_user_func_array(
+			    echo call_user_func_array(
 			    		array(
 			    			new $class, 
 			    			$method
