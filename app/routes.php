@@ -15,5 +15,5 @@ use Vertex\Core\View;
 
 $route->addRoute('GET', '/', 'ExampleController@index');
 
-//Example Controller with parameters
+//Example route with parameters
 //$route->addRoute('GET', '/news/{id:\+d}', 'NewsController@index');
