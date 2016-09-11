@@ -1,5 +1,7 @@
 <?php
 
+require __DIR__.'/../vendor/autoload.php';
+
 use PHPUnit\Framework\TestCase;
 use Vertex\Core\Database;
 
@@ -8,6 +10,7 @@ class DatabaseTest extends TestCase
     public function testConnectUsingMysql()
     {
         $connection = [
+            'enabled' => true,
             'connection' => 'mysql',
             'mysql' => [
                 'host' => getenv('DB_HOST'),
@@ -26,6 +29,7 @@ class DatabaseTest extends TestCase
     public function testConnectUsingSqlite()
     {
         $connection = [
+            'enabled' => true,
             'connection' => 'sqlite',
             'sqlite' => [
                 'database' => getenv('DB_DATABASE')
@@ -43,6 +47,7 @@ class DatabaseTest extends TestCase
     public function testConnectionShouldThrowException()
     {
         $connection = [
+            'enabled' => true,
             'connection' => 'driver_that_doesnt_exist',
         ];
 
