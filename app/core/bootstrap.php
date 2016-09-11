@@ -59,10 +59,9 @@ require __DIR__.'/../../vendor/autoload.php';
 */
 
 $router = new Router(
-	FastRoute\simpleDispatcher(function(FastRoute\RouteCollector $route){
-		require __DIR__.'/../routes.php';
-	})
+    FastRoute\simpleDispatcher(function (FastRoute\RouteCollector $route) {
+        require __DIR__.'/../routes.php';
+    })
 );
 
 $router->dispatch();
-

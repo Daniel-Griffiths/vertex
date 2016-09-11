@@ -13,7 +13,7 @@ use Vertex\Core\View;
 |
 */
 
-$route->addRoute('GET', '/', 'ExampleController@index');
+$route->get('/', 'ExampleController@index');
 
 //Example route with parameters
-//$route->addRoute('GET', '/news/{id:\+d}', 'NewsController@index');
+//$route->get('/news/{id:\+d}', 'NewsController@index');

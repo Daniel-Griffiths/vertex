@@ -27,10 +27,10 @@ class Database
      * @return PDO       
      */
     public function connection(array $config)
-    {   
-        if($config['enabled'] == 'true'){
+    {
+        if ($config['enabled'] == 'true') {
             try {
-                $instance = new PDO($this->loadConfig($config),$config['mysql']['username'],$config['mysql']['password']);
+                $instance = new PDO($this->loadConfig($config), $config['mysql']['username'], $config['mysql']['password']);
                 $instance->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
                 return $instance;
             } catch (PDOException $e) {
@@ -53,6 +53,6 @@ class Database
                 return $connection = 'sqlite:' . __DIR__ . '/database/' . $config['sqlite']['database'] . '.sqlite';
             default:
                 throw new Exception('Connection type not supported');
-        }        
+        }
     }
 }

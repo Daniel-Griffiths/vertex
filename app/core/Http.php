@@ -13,13 +13,12 @@ namespace Vertex\Core;
 
 class Http
 {
-	/**
-	 * Redirect to the specified url
-	 * @param  string $url 
-	 */
-	public static function redirect($url)
-	{
-		return header('location:' . $url);
-	}
+    /**
+     * Redirect to the specified url
+     * @param  string $url 
+     */
+    public static function redirect($url)
+    {
+        return header('location:' . $url);
+    }
 }
-

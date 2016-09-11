@@ -4,21 +4,21 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "21a1a7f2d7cbadc58ac664c2d1ca2460",
-    "content-hash": "3b8b86e51fc4a6fedb9adefb0f545637",
+    "hash": "96bdace0445099c339b43f2dd6ff0d3e",
+    "content-hash": "fd19e777c5f824b8dd8d7e9cbc58f1b0",
     "packages": [
         {
             "name": "nikic/fast-route",
-            "version": "v1.0.1",
+            "version": "dev-master",
             "source": {
                 "type": "git",
                 "url": "https://github.com/nikic/FastRoute.git",
-                "reference": "8ea928195fa9b907f0d6e48312d323c1a13cc2af"
+                "reference": "7b1553577137da1a6986e5ff15358447f7f714be"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/nikic/FastRoute/zipball/8ea928195fa9b907f0d6e48312d323c1a13cc2af",
-                "reference": "8ea928195fa9b907f0d6e48312d323c1a13cc2af",
+                "url": "https://api.github.com/repos/nikic/FastRoute/zipball/7b1553577137da1a6986e5ff15358447f7f714be",
+                "reference": "7b1553577137da1a6986e5ff15358447f7f714be",
                 "shasum": ""
             },
             "require": {
@@ -48,7 +48,7 @@
                 "router",
                 "routing"
             ],
-            "time": "2016-06-12 19:08:51"
+            "time": "2016-09-03 14:49:16"
         },
         {
             "name": "twig/twig",
@@ -165,7 +165,9 @@
     "packages-dev": [],
     "aliases": [],
     "minimum-stability": "stable",
-    "stability-flags": [],
+    "stability-flags": {
+        "nikic/fast-route": 20
+    },
     "prefer-stable": false,
     "prefer-lowest": false,
     "platform": [],
