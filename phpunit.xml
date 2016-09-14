@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<phpunit colors="true" strict="true" bootstrap="vendor/autoload.php">
+
+    <testsuites>
+        <testsuite name="Vertex Test Suite">
+            <directory>./tests/</directory>
+        </testsuite>
+    </testsuites>
+	
+	<logging>
+        <log type="coverage-text" target="php://stdout" showUncoveredFiles="true" />
+    </logging>
+
+	<filter>
+        <whitelist>
+            <directory suffix=".php">app</directory>
+        </whitelist>
+    </filter>
+
+</phpunit>
