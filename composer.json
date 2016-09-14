@@ -1,4 +1,14 @@
 {
+    "name": "Daniel-Griffiths/Vertex",
+    "description": "A simple PHP framework",
+    "license": "MIT",
+    "keywords": ["php", "framework"],
+    "authors": [
+        {
+          "name": "Daniel Griffiths",
+          "email": "contact@danielgriffiths.me"
+        }
+    ],
     "require": {
         "twig/twig": "~1.0",
         "nikic/fast-route": "dev-master#7b1553577137da1a6986e5ff15358447f7f714be",
