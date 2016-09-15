@@ -37,6 +37,7 @@ class Database
                 die($e->getMessage());
             }
         }
+        return false;
     }
 
     /**
