@@ -26,7 +26,7 @@ class Router
      * Main controller namespace
      * @var string
      */
-    private $namespace = 'Controller\\';
+    private $namespace = 'Vertex\\Controller\\';
 
     /**
      * Route Information
@@ -41,11 +41,12 @@ class Router
     public function __construct($dispatcher)
     {
         $this->dispatcher = $dispatcher;
-        $this->routeInfo = $this->routeInfo();
     }
 
     public function dispatch()
     {
+        $this->routeInfo = $this->routeInfo();
+
         switch ($this->routeInfo[0]) {
             case Dispatcher::NOT_FOUND:
                 echo View::render('404', [
@@ -82,9 +83,9 @@ class Router
      * @param  string $uri 
      * @return string
      */
-    private function parseUri($uri)
+    public function parseUri($uri)
     {
-        return $uri = rawurldecode(parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH));
+        return $uri = rawurldecode(parse_url($uri, PHP_URL_PATH));
     }
 
     /**

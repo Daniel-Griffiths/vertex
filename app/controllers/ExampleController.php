@@ -1,7 +1,8 @@
 <?php
 
-namespace Controller;
+namespace Vertex\Controller;
 
+use Vertex\Model\ExampleModel;
 use Vertex\Core\Controller;
 use Vertex\Core\View;
 
