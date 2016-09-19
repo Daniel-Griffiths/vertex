@@ -9,7 +9,7 @@ class ViewTest extends TestCase
 {
     public function testViewRender()
     {
-        $this->assertNotEmpty(View::render('example'),'test');
+        $this->assertNotEmpty(View::render('404'),'test');
     }
 
     /**
