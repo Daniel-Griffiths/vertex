@@ -90,6 +90,6 @@ gulp.task('compile-css', function () {
 |
 */
 
-gulp.task('default', ['compile-css', 'php-server', 'watch']);
+gulp.task('default', ['compile-css', 'browser-sync', 'watch']);
 
  
