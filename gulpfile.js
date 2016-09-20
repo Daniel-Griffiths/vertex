@@ -8,6 +8,8 @@
 var gulp = require('gulp');
 var watch = require('gulp-watch');
 var stylus = require('gulp-stylus');
+var connect = require('gulp-connect-php');
+var browserSync = require('browser-sync');
 var sourcemaps = require('gulp-sourcemaps');
 
 /*  
@@ -20,6 +22,9 @@ var sourcemaps = require('gulp-sourcemaps');
 /* css */
 var css_source = './resources/assets/css/app.styl';
 var css_dest = './public/assets/css';
+
+/* other */
+var reload  = browserSync.reload;  
  
 /*  
 |-------------------------------------------------------------------------- 
@@ -30,6 +35,38 @@ var css_dest = './public/assets/css';
 
 gulp.task('watch', function() {
   gulp.watch(css_source, ['compile-css']);
+  gulp.watch('**/*.php', [reload]);
+});
+
+/*  
+|-------------------------------------------------------------------------- 
+| Browser Sync
+|--------------------------------------------------------------------------
+|
+*/
+
+gulp.task('browser-sync',['php-server'], function() {
+    browserSync({
+        proxy: '127.0.0.1:8000',
+        port: 8000,
+        open: true,
+        notify: false
+    });
+});
+
+/*  
+|-------------------------------------------------------------------------- 
+| PHP Server
+|--------------------------------------------------------------------------
+|
+*/
+
+gulp.task('php-server', function() {
+  connect.server({
+  	port: 8000,
+  	base: './public/',
+  	hostname: '127.0.0.1'
+  });
 });
 
 /*  
@@ -56,6 +93,6 @@ gulp.task('compile-css', function () {
 |
 */
 
-gulp.task('default', ['compile-css']);
+gulp.task('default', ['php-server','watch']);
 
  
