@@ -49,7 +49,8 @@ class Router
 
         switch ($this->routeInfo[0]) {
             case Dispatcher::NOT_FOUND:
-                echo View::render('404', [
+                echo View::render('errors.404', [
+                    'title' => '404',
                     'error_number' => '404',
                     'error_message' => 'Page Could Not Be Found'
                 ]);

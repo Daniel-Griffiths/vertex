@@ -9,7 +9,7 @@ use Jenssegers\Blade\Blade;
 | View Class
 |--------------------------------------------------------------------------
 |
-| This allows your app to render twig templates!
+| This allows your app to render templates!
 |
 */
 

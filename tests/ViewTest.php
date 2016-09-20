@@ -9,11 +9,11 @@ class ViewTest extends TestCase
 {
     public function testViewRender()
     {
-        $this->assertNotEmpty(View::render('404'),'test');
+        $this->assertNotEmpty(View::render('errors.404'),'test');
     }
 
     /**
-     * @expectedException Twig_Error_Loader
+     * @expectedException InvalidArgumentException
      */
     public function testViewThrowException()
     {

@@ -10,7 +10,7 @@ class ExampleController extends Controller
 {
     public function index()
     {
-        return View::render('example', [
+        return View::render('examples.homepage', [
             'title' => 'Vertex',
             'tagline' => 'Build Something Amazing'
         ]);

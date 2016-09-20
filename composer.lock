@@ -4,8 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "41e6d78c93bf1729de1e8f03b3d99441",
-    "content-hash": "87309208088d9cf9cddfccd0b087ac46",
+    "hash": "586d126a0ebcd09334626d08cd3aeeb9",
+    "content-hash": "534dc0233a0cb8167ea707e4fb175d0a",
     "packages": [
         {
             "name": "doctrine/inflector",
@@ -650,67 +650,6 @@
             "description": "Symfony Finder Component",
             "homepage": "https://symfony.com",
             "time": "2016-08-26 12:04:02"
-        },
-        {
-            "name": "twig/twig",
-            "version": "v1.24.2",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/twigphp/Twig.git",
-                "reference": "33093f6e310e6976baeac7b14f3a6ec02f2d79b7"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/twigphp/Twig/zipball/33093f6e310e6976baeac7b14f3a6ec02f2d79b7",
-                "reference": "33093f6e310e6976baeac7b14f3a6ec02f2d79b7",
-                "shasum": ""
-            },
-            "require": {
-                "php": ">=5.2.7"
-            },
-            "require-dev": {
-                "symfony/debug": "~2.7",
-                "symfony/phpunit-bridge": "~2.7"
-            },
-            "type": "library",
-            "extra": {
-                "branch-alias": {
-                    "dev-master": "1.24-dev"
-                }
-            },
-            "autoload": {
-                "psr-0": {
-                    "Twig_": "lib/"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "BSD-3-Clause"
-            ],
-            "authors": [
-                {
-                    "name": "Fabien Potencier",
-                    "email": "fabien@symfony.com",
-                    "homepage": "http://fabien.potencier.org",
-                    "role": "Lead Developer"
-                },
-                {
-                    "name": "Armin Ronacher",
-                    "email": "armin.ronacher@active-4.com",
-                    "role": "Project Founder"
-                },
-                {
-                    "name": "Twig Team",
-                    "homepage": "http://twig.sensiolabs.org/contributors",
-                    "role": "Contributors"
-                }
-            ],
-            "description": "Twig, the flexible, fast, and secure template language for PHP",
-            "homepage": "http://twig.sensiolabs.org",
-            "keywords": [
-                "templating"
-            ],
-            "time": "2016-09-01 17:50:53"
         },
         {
             "name": "vlucas/phpdotenv",
