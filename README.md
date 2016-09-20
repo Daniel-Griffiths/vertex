@@ -4,7 +4,7 @@ A simple PHP framework
 [![CircleCI](https://circleci.com/gh/Daniel-Griffiths/Vertex.svg?style=shield)](https://circleci.com/gh/Daniel-Griffiths/Vertex)
 
 ## Requirements
-Vertex makes use of composer and npm to autoload its dependencies. Be sure to run the `composer install` and `npm install` after you download the framework. 
+Vertex makes use of composer and npm to autoload its dependencies. Be sure to run the `composer install` and `npm install` commands after you download the framework. 
 
 Once all the dependencies have been installed you can get started running the `gulp` commmand on the root of your project. This will automatically create a local php server to get you up and running.
 
