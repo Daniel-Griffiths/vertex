@@ -18,6 +18,7 @@
   "homepage": "https://github.com/Daniel-Griffiths/Vertex#readme",
   "devDependencies": {
     "browser-sync": "^2.16.0",
+    "gulp": "^3.9.1",
     "gulp-connect-php": "0.0.8",
     "gulp-sourcemaps": "^1.6.0",
     "gulp-stylus": "^2.5.0",
