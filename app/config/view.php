@@ -11,9 +11,6 @@ return [
 | You can specify the details below.
 |
 */
-    'cache' => [
-        'cache' => false
-        //'cache' => __DIR__.'/../core/cache/views/'
-    ]
+    'cache' =>  __DIR__.'/../core/cache/views/'
     
 ];

@@ -2,8 +2,7 @@
 
 namespace Vertex\Core;
 
-use Twig_Loader_Filesystem;
-use Twig_Environment;
+use Jenssegers\Blade\Blade;
 
 /*  
 |-------------------------------------------------------------------------- 
@@ -24,10 +23,8 @@ class View
      */
     public static function render(string $view, array $parameters = [])
     {
-        $loader = new Twig_Loader_Filesystem(__DIR__.'/../views/');
-        $twig   = new Twig_Environment($loader, Config::get('view')['cache']);
+        $blade = new Blade(__DIR__.'/../views/', Config::get('view')['cache']);
 
-        $template = $twig->loadTemplate($view . '.html');
-        return $template->render($parameters);
+        return $blade->make($view, $parameters);
     }
 }
