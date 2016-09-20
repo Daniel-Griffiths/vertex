@@ -22,9 +22,6 @@ var sourcemaps = require('gulp-sourcemaps');
 /* css */
 var css_source = './resources/assets/css/app.styl';
 var css_dest = './public/assets/css';
-
-/* other */
-var reload  = browserSync.reload;  
  
 /*  
 |-------------------------------------------------------------------------- 
@@ -34,8 +31,8 @@ var reload  = browserSync.reload;
 */
 
 gulp.task('watch', function() {
-  gulp.watch(css_source, ['compile-css']);
-  gulp.watch('**/*.php', [reload]);
+  gulp.watch(css_source, [browserSync.reload]);
+  gulp.watch('**/*.php', [browserSync.reload]);
 });
 
 /*  
@@ -93,6 +90,6 @@ gulp.task('compile-css', function () {
 |
 */
 
-gulp.task('default', ['php-server','watch','compile-css']);
+gulp.task('default', ['compile-css', 'php-server', 'watch']);
 
  
