@@ -95,7 +95,7 @@ class Router
      */
     public function routeInfo()
     {
-        return $route_info = $this->dispatcher->dispatch(
+        return $this->dispatcher->dispatch(
             $_SERVER['REQUEST_METHOD'],
             $this->parseUri($_SERVER['REQUEST_URI'])
         );
