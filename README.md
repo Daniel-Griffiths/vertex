@@ -15,4 +15,4 @@ All configuration options are specified in the `.env` file in the root directory
 Vertex uses FastRoute for all its routing needs. Routes are stored in the `app/routes.php` file. Please visit the following repo for full documentation  `https://github.com/nikic/FastRoute`.
 
 ## Templating
-Vertex uses Laravels fantastic Blade templating engine. Views are stored in the `app/views/` directory and **must** have the file extension of `.html`. Please visit `http://twig.sensiolabs.org/documentation` for full documentation.
+Vertex uses Laravels fantastic Blade templating engine. Views are stored in the `resources/views/` directory and **must** have the file extension of `.blade.php`. Please visit `https://laravel.com/docs/5.3/blade` for full documentation.
