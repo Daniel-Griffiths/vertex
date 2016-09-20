@@ -93,6 +93,6 @@ gulp.task('compile-css', function () {
 |
 */
 
-gulp.task('default', ['php-server','watch']);
+gulp.task('default', ['php-server','watch','compile-css']);
 
  
