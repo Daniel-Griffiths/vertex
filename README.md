@@ -33,10 +33,6 @@ Finally run the `gulp` commmand on the root of your project. This will automatic
 All configuration options are specified in the `.env` file in the root directory. By default you will get an example file to get you started. 
 
 ```
-#--------------------------------------------------------------------------
-# Database 
-#--------------------------------------------------------------------------
-
 DB_ENABLED=false #set to true to enable database
 DB_CONNECTION=mysql
 DB_HOST=127.0.0.1
