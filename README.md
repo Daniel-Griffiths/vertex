@@ -51,7 +51,7 @@ There is also the option of manually declare your setting in the `app/config/` d
 You can easily access any of your config options in Vertex by using the `Config::get()` method. Supply a string to the method (eg `Config::get('database')`) and it will return an array of all the values specified in that file, in this case it would be `app/config/database.php`.
 
 ## Routes
-Vertex uses FastRoute for all its routing needs. Routes are stored in the `app/routes.php` file. Please visit the following repo for full documentation  [https://github.com/nikic/FastRoute](https://getcomposer.org/).
+Vertex uses FastRoute for all its routing needs. Routes are stored in the `app/routes.php` file. Please visit the following repo for full documentation  [https://github.com/nikic/FastRoute](https://github.com/nikic/FastRoute).
 
 ## Templating
 Vertex uses Laravels fantastic Blade templating engine. Views are stored in the `resources/views/` directory and **must** have the file extension of `.blade.php`. Please visit [https://laravel.com/docs/5.3/blade](https://laravel.com/docs/5.3/blade) for full documentation.
