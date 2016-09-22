@@ -55,3 +55,6 @@ Vertex uses FastRoute for all its routing needs. Routes are stored in the `app/r
 
 ## Templating
 Vertex uses Laravels fantastic Blade templating engine. Views are stored in the `resources/views/` directory and **must** have the file extension of `.blade.php`. Please visit [https://laravel.com/docs/5.3/blade](https://laravel.com/docs/5.3/blade) for full documentation.
+
+## Email
+Vertex uses PHPMailer to send emails. There are no fancy wrapper classes as of yet, however all the standard methods defined in the [PHPMailer](https://github.com/PHPMailer/PHPMailer) documentation are available.

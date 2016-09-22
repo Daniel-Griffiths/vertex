@@ -12,7 +12,8 @@
     "require": {
         "nikic/fast-route": "dev-master#7b1553577137da1a6986e5ff15358447f7f714be",
         "vlucas/phpdotenv": "^2.4",
-        "jenssegers/blade": "^1.0"
+        "jenssegers/blade": "^1.0",
+        "phpmailer/phpmailer": "^5.2"
     },
     "autoload": {
         "psr-4": {
