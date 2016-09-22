@@ -49,6 +49,18 @@ You can easily access any of your config options in Vertex by using the `Config:
 ## Routes
 Vertex uses FastRoute for all its routing needs. Routes are stored in the `app/routes.php` file. Please visit the following repo for full documentation  [https://github.com/nikic/FastRoute](https://github.com/nikic/FastRoute).
 
+Here are some example routes:
+```
+/* standard routes */
+$route->get('/test', 'ControllerName@MethodName');
+$route->post('/test', 'ControllerName@MethodName');
+$route->put('/test', 'ControllerName@MethodName');
+$route->delete('/test', 'ControllerName@MethodName');
+
+/* routes with parameters */
+$route->get('/test/{parameter}', 'ControllerName@MethodName');
+```
+
 ## Templating
 Vertex uses Laravels fantastic Blade templating engine. Views are stored in the `resources/views/` directory and **must** have the file extension of `.blade.php`. Please visit [https://laravel.com/docs/5.3/blade](https://laravel.com/docs/5.3/blade) for full documentation.
 
