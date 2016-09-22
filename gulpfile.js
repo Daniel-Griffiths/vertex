@@ -46,7 +46,8 @@ gulp.task('browser-sync',['php-server'], function() {
     browserSync({
         proxy: '127.0.0.1:8000',
         port: 8000,
-        open: true,
+        open: 'local',
+        online: true,
         notify: false
     });
 });
