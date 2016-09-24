@@ -2,3 +2,9 @@ machine:
   php:
     version: 7.0.4
     
+deployment:
+  staging:
+    branch: master
+    heroku:
+      appname: vertex-app
+    
