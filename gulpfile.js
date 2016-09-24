@@ -80,7 +80,7 @@ gulp.task('compile-css', function () {
     .pipe(stylus({
       compress: true
     }))
-    .pipe(sourcemaps.write())
+    .pipe(sourcemaps.write('.')) 
     .pipe(gulp.dest(css_dest));
 });
  
