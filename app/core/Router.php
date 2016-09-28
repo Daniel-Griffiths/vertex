@@ -43,40 +43,52 @@ class Router
         $this->dispatcher = $dispatcher;
     }
 
+    /**
+     * Dispatch
+     */
     public function dispatch()
     {
         $this->routeInfo = $this->routeInfo();
 
         switch ($this->routeInfo[0]) {
             case Dispatcher::NOT_FOUND:
-                echo View::render('errors.404', [
-                    'title' => '404',
-                    'error_number' => '404',
-                    'error_message' => 'Page Could Not Be Found'
-                ]);
+                echo $this->routeNotFound();
                 break;
             case Dispatcher::FOUND:
-                $handler = $this->routeInfo[1];
-                $parameters = $this->routeInfo[2];
-
-                /* its a closure */
-                if (is_callable($handler)) {
-                    echo call_user_func_array($handler, $parameters);
-                    break;
-                }
-
-                /* its a class */
-                list($class, $method) = explode("@", $handler, 2);
-                $class = $this->namespace . $class;
-                echo call_user_func_array(
-                        array(
-                            new $class,
-                            $method
-                        ),
-                        $parameters
-                );
+                echo $this->routeFound($this->routeInfo[1], $this->routeInfo[2]);
                 break;
         }
+    }
+
+    /**
+     * Route Found
+     * @param  string $handler    
+     * @param  array $parameters 
+     */
+    private function routeFound($handler, $parameters)
+    {
+        /* its a closure */
+        if (is_callable($handler)) {
+            echo call_user_func_array($handler, $parameters);
+            return true;
+        }
+
+        /* its a class */
+        list($class, $method) = explode("@", $handler, 2);
+        $class = $this->namespace . $class;
+        echo call_user_func_array([new $class, $method], $parameters);        
+    }
+
+    /**
+     * Route Not Found
+     */
+    private function routeNotFound()
+    {
+        return View::render('errors.404', [
+            'title' => '404',
+            'error_number' => '404',
+            'error_message' => 'Page Could Not Be Found'
+        ]);        
     }
 
     /**

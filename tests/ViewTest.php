@@ -6,10 +6,10 @@ use Vertex\Core\View;
 
 class ViewTest extends TestCase
 {
-    public function testViewRender()
-    {
-        $this->assertNotEmpty(View::render('errors.404'),'test');
-    }
+    // public function testViewRender()
+    // {
+    //     $this->assertNotEmpty(View::render('errors.404'),'test');
+    // }
 
     /**
      * @expectedException InvalidArgumentException
