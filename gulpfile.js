@@ -20,7 +20,7 @@ var sourcemaps = require('gulp-sourcemaps');
 */
 
 /* css */
-var css_source = './resources/assets/css/**/*.styl';
+var css_source = './app/assets/css/**/*.styl';
 var css_dest = './public/assets/css';
  
 /*  

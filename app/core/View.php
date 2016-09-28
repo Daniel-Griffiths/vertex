@@ -23,7 +23,7 @@ class View
      */
     public static function render(string $view, array $parameters = [])
     {
-        $blade = new Blade(__DIR__.'/../../resources/views/', Config::get('view')['cache']);
+        $blade = new Blade(__DIR__.'/../views/', Config::get('view')['cache']);
 
         return $blade->make($view, $parameters);
     }

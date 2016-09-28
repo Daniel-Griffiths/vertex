@@ -2,3 +2,4 @@
 /node_modules
 /app/core/cache/views/
 /public/assets/css/app.css
+/public/assets/css/app.css.map
