@@ -1,6 +1,7 @@
 <?php
 
 use PHPUnit\Framework\TestCase;
+use Vertex\Core\Config;
 use Vertex\Core\View;
 
 class ViewTest extends TestCase
