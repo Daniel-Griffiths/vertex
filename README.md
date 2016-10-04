@@ -37,7 +37,7 @@ Finally run the `gulp` commmand on the root of your project. This will automatic
 All configuration options are specified in the `.env` file in the root directory. By default you will get an example file to get you started. 
 
 ```
-DB_ENABLED=false #set to true to enable database
+DB_ENABLED=false 
 DB_CONNECTION=mysql
 DB_HOST=127.0.0.1
 DB_PORT=3306
@@ -72,6 +72,25 @@ $route->get('/test', function(){
 
 ## Templating
 Vertex uses Laravels fantastic Blade templating engine. Views are stored in the `app/resources/views/` directory and **must** have the file extension of `.blade.php`. Please visit [https://laravel.com/docs/5.3/blade](https://laravel.com/docs/5.3/blade) for full documentation.
+
+Here is an example blade template:
+
+```
+<html>
+    <head>
+        <title>App Name - @yield('title')</title>
+    </head>
+    <body>
+        @section('sidebar')
+            This is the master sidebar.
+        @show
+
+        <div class="container">
+            @yield('content')
+        </div>
+    </body>
+</html>
+```
 
 ## Email
 Vertex uses PHPMailer to send emails. There are no fancy wrapper classes as of yet, however all the standard methods defined in the [PHPMailer](https://github.com/PHPMailer/PHPMailer) documentation are available.
