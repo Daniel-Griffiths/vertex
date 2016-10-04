@@ -69,14 +69,13 @@ class Router
     {
         /* its a closure */
         if (is_callable($handler)) {
-            echo call_user_func_array($handler, $parameters);
-            return true;
+            return $this->handle($handler, $parameters);
         }
 
         /* its a class */
         list($class, $method) = explode("@", $handler, 2);
         $class = $this->namespace . $class;
-        echo call_user_func_array([new $class, $method], $parameters);        
+        return $this->handle([new $class, $method], $parameters);        
     }
 
     /**
@@ -89,6 +88,22 @@ class Router
             'error_number' => '404',
             'error_message' => 'Page Could Not Be Found'
         ]);        
+    }
+
+    /**
+     * Handle the callback
+     * @param  string $callback   
+     * @param  array $parameters 
+     */
+    public function handle($callback, ...$parameters)
+    {
+        $callback = call_user_func_array($callback, $parameters);
+        
+        if(is_array($callback)){
+            echo json_encode($callback);
+        } else {
+            echo $callback;      
+        }
     }
 
     /**
