@@ -46,7 +46,7 @@ DB_USERNAME=root
 DB_PASSWORD=root
 ```
 
-There is also the option of manually declare your setting in the `app/config/` directory. Simply go into any of the files in this directory and manually replace the `getenv()` functions with your desired configuration.
+There is also the option of manually declaring your setting in the `app/config/` directory. Simply go into any of the files in this directory and manually replace the `getenv()` functions with your desired configuration.
 
 You can easily access any of your config options in Vertex by using the `Config::get()` method. Supply a string to the method (eg `Config::get('database')`) and it will return an array of all the values specified in that file, in this case it would be `app/config/database.php`.
 
