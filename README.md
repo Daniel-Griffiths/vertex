@@ -61,8 +61,13 @@ $route->post('/test', 'ControllerName@MethodName');
 $route->put('/test', 'ControllerName@MethodName');
 $route->delete('/test', 'ControllerName@MethodName');
 
-/* routes with parameters */
+/* route with parameters */
 $route->get('/test/{parameter}', 'ControllerName@MethodName');
+
+/* route with closure */
+$route->get('/test', function(){
+  return 'Test!';
+});
 ```
 
 ## Templating
