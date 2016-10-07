@@ -99,11 +99,7 @@ class Router
     {
         $callback = call_user_func_array($callback, $parameters);
         
-        if(is_array($callback)){
-            echo json_encode($callback);
-        } else {
-            echo $callback;      
-        }
+        echo (is_array($callback)) ? json_encode($callback) : $callback;
     }
 
     /**
