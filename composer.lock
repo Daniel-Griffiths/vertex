@@ -4,8 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "84641ed4f9e5962e9faee129282bbee8",
-    "content-hash": "abcd033fedd2b9c38b196bf17eb36b12",
+    "hash": "ee860c2adfbca464e76de0888a51b2b3",
+    "content-hash": "57b94acaa4cbd6b2673f0c7befe2c537",
     "packages": [
         {
             "name": "doctrine/inflector",
@@ -409,16 +409,16 @@
         },
         {
             "name": "nikic/fast-route",
-            "version": "dev-master",
+            "version": "v1.1.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/nikic/FastRoute.git",
-                "reference": "7b1553577137da1a6986e5ff15358447f7f714be"
+                "reference": "f3dcf5130e634b6123d40727d612ec6aa4f61fb3"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/nikic/FastRoute/zipball/7b1553577137da1a6986e5ff15358447f7f714be",
-                "reference": "7b1553577137da1a6986e5ff15358447f7f714be",
+                "url": "https://api.github.com/repos/nikic/FastRoute/zipball/f3dcf5130e634b6123d40727d612ec6aa4f61fb3",
+                "reference": "f3dcf5130e634b6123d40727d612ec6aa4f61fb3",
                 "shasum": ""
             },
             "require": {
@@ -448,7 +448,7 @@
                 "router",
                 "routing"
             ],
-            "time": "2016-09-03 14:49:16"
+            "time": "2016-10-20 17:36:47"
         },
         {
             "name": "paragonie/random_compat",
@@ -765,9 +765,7 @@
     "packages-dev": [],
     "aliases": [],
     "minimum-stability": "stable",
-    "stability-flags": {
-        "nikic/fast-route": 20
-    },
+    "stability-flags": [],
     "prefer-stable": false,
     "prefer-lowest": false,
     "platform": [],
