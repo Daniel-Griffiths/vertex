@@ -6,7 +6,6 @@
 */
 
 var gulp = require('gulp');
-var env = require('gulp-env');
 var watch = require('gulp-watch');
 var stylus = require('gulp-stylus');
 var connect = require('gulp-connect-php');
@@ -20,14 +19,8 @@ var sourcemaps = require('gulp-sourcemaps');
 |
 */
 
-/* read the env file */
-env({
-  file: '.env',
-  type: 'ini',
-});
-
 /* css */
-var css_source = './app/resources/' + process.env.APP_THEME + '/assets/css/**/*.styl';
+var css_source = './app/resources/assets/css/**/*.styl';
 var css_dest = './public/assets/css';
 
 /*  
