@@ -15,20 +15,21 @@ body, html
 	align-items center
 	flex-direction column
 
-h1, p
-	animation fadeIn 1s
-	animation-fill-mode forwards
+.title
+	&__primary
+		animation fadeIn 1s
+		animation-fill-mode forwards
+		font-size 2em
+		text-transform uppercase
+		letter-spacing 0.3em
 
-h1
-	font-size 2em
-	text-transform uppercase
-	letter-spacing 0.3em
-
-p
-	font-weight 100
-	animation-delay 0.2s
-	opacity 0
-
+	&__secondary
+		animation fadeIn 1s
+		animation-fill-mode forwards
+		font-weight 100
+		animation-delay 0.2s
+		opacity 0
+ 
 @keyframes fadeIn
 	from 
 		opacity 0  

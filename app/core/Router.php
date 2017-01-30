@@ -48,14 +48,14 @@ class Router
      */
     public function dispatch()
     {
-        $this->routeInfo = $this->routeInfo();
+        $this->routeInfo = $this->info();
 
         switch ($this->routeInfo[0]) {
             case Dispatcher::NOT_FOUND:
-                echo $this->routeNotFound();
+                echo $this->error();
                 break;
             case Dispatcher::FOUND:
-                echo $this->routeFound($this->routeInfo[1], $this->routeInfo[2]);
+                echo $this->found($this->routeInfo[1], $this->routeInfo[2]);
                 break;
         }
     }
@@ -65,7 +65,7 @@ class Router
      * @param  string $handler    
      * @param  array $parameters 
      */
-    private function routeFound($handler, $parameters)
+    private function found($handler, $parameters)
     {
         /* its a closure */
         if (is_callable($handler)) {
@@ -81,7 +81,7 @@ class Router
     /**
      * Route Not Found
      */
-    private function routeNotFound()
+    private function error()
     {
         return View::render('errors.404', [
             'title' => '404',
@@ -103,24 +103,14 @@ class Router
     }
 
     /**
-     * Strip query string (?foo=bar) and decode URI
-     * @param  string $uri 
-     * @return string
-     */
-    public function parseUri($uri)
-    {
-        return $uri = rawurldecode(parse_url($uri, PHP_URL_PATH));
-    }
-
-    /**
      * Returns the current route information
      * @return array
      */
-    public function routeInfo()
+    public function info()
     {
         return $this->dispatcher->dispatch(
             $_SERVER['REQUEST_METHOD'],
-            $this->parseUri($_SERVER['REQUEST_URI'])
+            strtok($_SERVER['REQUEST_URI'], '?')
         );
     }
 }
