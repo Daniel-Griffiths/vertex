@@ -16,4 +16,4 @@ use Vertex\Core\View;
 $route->get('/', 'ExampleController@index');
 
 //Example route with parameters
-//$route->get('/news/{id:\+d}', 'NewsController@index');
+//$route->get('/news/{id}', 'NewsController@index');
