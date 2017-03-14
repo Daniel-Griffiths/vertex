@@ -78,7 +78,8 @@ gulp.task('compile-css', function () {
   return gulp.src(css_source)
   	.pipe(sourcemaps.init())
     .pipe(stylus({
-      compress: true
+      'compress': true,
+      'include css': true
     }))
     .pipe(sourcemaps.write('.')) 
     .pipe(gulp.dest(css_dest));
