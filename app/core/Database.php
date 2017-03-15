@@ -32,6 +32,7 @@ class Database
             try {
                 $instance = new PDO($this->loadConfig($config), $config['mysql']['username'], $config['mysql']['password']);
                 $instance->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+                $instance->setAttribute(PDO::ATTR_DEFAULT_FETCH_MODE, PDO::FETCH_OBJ);
                 return $instance;
             } catch (PDOException $e) {
                 die($e->getMessage());
