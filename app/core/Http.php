@@ -19,6 +19,7 @@ class Http
      */
     public static function redirect($url)
     {
-        return header('location:' . $url);
+        header('location:' . $url);
+        die;
     }
 }
