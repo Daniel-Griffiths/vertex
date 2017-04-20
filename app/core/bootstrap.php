@@ -60,6 +60,17 @@ require __DIR__.'/../../vendor/autoload.php';
 
 /*
 |--------------------------------------------------------------------------
+| Register Whoops error handler
+|--------------------------------------------------------------------------
+|
+*/
+
+$whoops = new \Whoops\Run;
+$whoops->pushHandler(new \Whoops\Handler\PrettyPageHandler);
+$whoops->register();
+
+/*
+|--------------------------------------------------------------------------
 | Load Routes
 |--------------------------------------------------------------------------
 |
@@ -67,10 +78,14 @@ require __DIR__.'/../../vendor/autoload.php';
 |
 */
 
-$router = new Router(
-    FastRoute\simpleDispatcher(function (FastRoute\RouteCollector $route) {
-        require __DIR__.'/../routes.php';
-    })
-);
+try {
+	$router = new Router(
+	    FastRoute\simpleDispatcher(function (FastRoute\RouteCollector $route) {
+	        require __DIR__.'/../routes.php';
+	    })
+	);
+} catch (Exception $e) {
+    throw $e;
+}
 
 $router->dispatch();
