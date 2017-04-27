@@ -61,6 +61,18 @@ class Router
     }
 
     /**
+     * Returns the current route information
+     * @return array
+     */
+    public function info()
+    {
+        return $this->dispatcher->dispatch(
+            $_SERVER['REQUEST_METHOD'],
+            strtok($_SERVER['REQUEST_URI'], '?')
+        );
+    }
+
+    /**
      * Route Found
      * @param  string $handler    
      * @param  array $parameters 
@@ -79,6 +91,18 @@ class Router
     }
 
     /**
+     * Handle the callback
+     * @param  string $callback   
+     * @param  array $parameters 
+     */
+    public function handle($callback, ...$parameters)
+    {
+        $callback = call_user_func_array($callback, ...$parameters);
+        
+        echo (is_array($callback)) ? json_encode($callback) : $callback;
+    }
+
+    /**
      * Route Not Found
      */
     private function error()
@@ -88,29 +112,5 @@ class Router
             'error_number' => '404',
             'error_message' => 'Page Could Not Be Found'
         ]);        
-    }
-
-    /**
-     * Handle the callback
-     * @param  string $callback   
-     * @param  array $parameters 
-     */
-    public function handle($callback, ...$parameters)
-    {
-        $callback = call_user_func_array($callback, $parameters);
-        
-        echo (is_array($callback)) ? json_encode($callback) : $callback;
-    }
-
-    /**
-     * Returns the current route information
-     * @return array
-     */
-    public function info()
-    {
-        return $this->dispatcher->dispatch(
-            $_SERVER['REQUEST_METHOD'],
-            strtok($_SERVER['REQUEST_URI'], '?')
-        );
     }
 }
