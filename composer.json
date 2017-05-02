@@ -14,7 +14,8 @@
         "jenssegers/blade": "^1.0",
         "phpmailer/phpmailer": "^5.2",
         "nikic/fast-route": "^1.1",
-        "filp/whoops": "^2.1"
+        "filp/whoops": "^2.1",
+        "symfony/console": "^3.2"
     },
     "autoload": {
         "psr-4": {
