@@ -68,6 +68,13 @@ $route->get('/test/{parameter}', 'ControllerName@MethodName');
 $route->get('/test', function(){
   return 'Test!';
 });
+
+/* route group */
+$route->addGroup('/admin', function ($route) {
+    $route->get('/dashboard', 'AdminController@dashboard'); // admin/dashboard
+    $route->get('/pages', 'AdminController@pages');         // admin/pages
+    $route->get('/posts', 'AdminController@posts');         // admin/posts
+});
 ```
 
 ## Templating
