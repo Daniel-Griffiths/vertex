@@ -25,6 +25,6 @@
     "gulp-watch": "^4.3.11"
   },
   "scripts":{
-    "postinstall": "gulp compile-css"
+    "build": "gulp compile-css"
   }
 }
