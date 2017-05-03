@@ -29,12 +29,6 @@ class Router
     private $namespace = 'Vertex\\Controller\\';
 
     /**
-     * Route Information
-     * @var array
-     */
-    private $routeInfo = [];
-
-    /**
      * Inject any dependencies 
      * @param object $dispatcher 
      */
@@ -48,14 +42,17 @@ class Router
      */
     public function dispatch()
     {
-        $this->routeInfo = $this->info();
+        $routeInfo = $this->info();
 
-        switch ($this->routeInfo[0]) {
+        switch ($routeInfo[0]) {
             case Dispatcher::NOT_FOUND:
-                echo $this->error();
+                echo $this->error('404', 'Page Could Not Be Found');
+                break;
+            case Dispatcher::METHOD_NOT_ALLOWED:
+                echo $this->error('405', 'Method is not allowed');
                 break;
             case Dispatcher::FOUND:
-                echo $this->found($this->routeInfo[1], $this->routeInfo[2]);
+                echo $this->found($routeInfo[1], $routeInfo[2]);
                 break;
         }
     }
@@ -66,10 +63,7 @@ class Router
      */
     public function info()
     {
-        return $this->dispatcher->dispatch(
-            $_SERVER['REQUEST_METHOD'],
-            strtok($_SERVER['REQUEST_URI'], '?')
-        );
+        return $this->dispatcher->dispatch($_SERVER['REQUEST_METHOD'], strtok($_SERVER['REQUEST_URI'], '?'));
     }
 
     /**
@@ -103,14 +97,16 @@ class Router
     }
 
     /**
-     * Route Not Found
+     * Error responce
+     * @param  string $type        
+     * @param  string $description 
      */
-    private function error()
+    private function error($type, $description)
     {
-        return View::render('errors.404', [
-            'title' => '404',
-            'error_number' => '404',
-            'error_message' => 'Page Could Not Be Found'
+        return View::render('errors.request', [
+            'title' => $type,
+            'error_number' => $type,
+            'error_message' => $description
         ]);        
     }
 }
