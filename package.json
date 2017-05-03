@@ -25,6 +25,6 @@
     "gulp-watch": "^4.3.11"
   },
   "scripts":{
-    "build": "gulp compile-css"
+    "heroku-postbuild": "gulp compile-css"
   }
 }
