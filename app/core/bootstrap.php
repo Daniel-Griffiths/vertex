@@ -78,14 +78,11 @@ $whoops->register();
 |
 */
 
-try {
-	$router = new Router(
-	    FastRoute\simpleDispatcher(function (FastRoute\RouteCollector $route) {
-	        require __DIR__.'/../routes.php';
-	    })
-	);
-} catch (Exception $e) {
-    throw $e;
-}
+$router = new Router(
+    FastRoute\simpleDispatcher(function (FastRoute\RouteCollector $route) {
+        require __DIR__.'/../routes.php';
+    })
+);
+
 
 $router->dispatch();
