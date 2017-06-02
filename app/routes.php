@@ -14,17 +14,3 @@ use Vertex\Core\View;
 */
 
 $route->get('/', 'ExampleController@index');
-
-/**
- * Example route with parameters
- */
-//$route->get('/news/{id}', 'NewsController@index');
-
-/**
- * Example route group
- */
-// $route->addGroup('/admin', function ($route) {
-//     $route->get('/dashboard', 'AdminController@dashboard');
-//     $route->get('/pages', 'AdminController@pages');
-//     $route->get('/posts', 'AdminController@posts');
-// });
