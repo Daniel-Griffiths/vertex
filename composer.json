@@ -24,5 +24,10 @@
             "Vertex\\Model\\": "app/models",
             "Vertex\\Core\\Traits\\": "app/core/traits"
        	}
+    },
+    "scripts": {
+        "post-install-cmd": [
+            "php -r \"copy('.env.example', '.env');\""
+        ]
     }
 }
