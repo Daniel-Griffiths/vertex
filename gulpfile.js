@@ -8,7 +8,6 @@
 var gulp = require('gulp');
 var watch = require('gulp-watch');
 var stylus = require('gulp-stylus');
-var connect = require('gulp-connect-php');
 var browserSync = require('browser-sync');
 var sourcemaps = require('gulp-sourcemaps');
 
@@ -42,29 +41,11 @@ gulp.task('watch', function() {
 |
 */
 
-gulp.task('browser-sync',['php-server'], function() {
+gulp.task('browser-sync', function() {
     browserSync({
-        proxy: '127.0.0.1:8000',
-        port: 8000,
-        open: 'local',
-        online: true,
+        proxy: 'vertex.dev',
         notify: false
     });
-});
-
-/*  
-|-------------------------------------------------------------------------- 
-| PHP Server
-|--------------------------------------------------------------------------
-|
-*/
-
-gulp.task('php-server', function() {
-  connect.server({
-  	port: 8000,
-  	base: './public/',
-  	hostname: '127.0.0.1'
-  });
 });
 
 /*  
