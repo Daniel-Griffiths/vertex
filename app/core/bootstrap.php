@@ -31,6 +31,9 @@ use Vertex\Core\Router;
 use Vertex\Core\View;
 use Dotenv\Dotenv;
 
+use Whoops\Handler\PrettyPageHandler;
+use Whoops\Run as Whoops;
+
 /*
 |--------------------------------------------------------------------------
 | Start Sessions
@@ -65,9 +68,7 @@ require __DIR__.'/../../vendor/autoload.php';
 |
 */
 
-$whoops = new \Whoops\Run;
-$whoops->pushHandler(new \Whoops\Handler\PrettyPageHandler);
-$whoops->register();
+(new Whoops)->pushHandler(new PrettyPageHandler)->register();
 
 /*
 |--------------------------------------------------------------------------
