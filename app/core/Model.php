@@ -25,6 +25,6 @@ abstract class Model
      */
     public function __construct()
     {
-        $this->database = (new Database)->connection(Config::get('database'));
+        $this->database = Database::singleton()->connection(Config::get('database'));
     }
 }

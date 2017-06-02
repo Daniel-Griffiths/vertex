@@ -2,11 +2,14 @@
 
 namespace Vertex\Core;
 
+use Vertex\Core\Traits\SingletonTrait;
 use Exception;
 use PDO;
 
 class Database
 {
+    use SingletonTrait;
+
     /**
      * Connect to the appropriate database
      * based on the details specified in

@@ -21,7 +21,8 @@
         "psr-4": {
             "Vertex\\Core\\": "app/core",
             "Vertex\\Controller\\": "app/controllers",
-            "Vertex\\Model\\": "app/models"
+            "Vertex\\Model\\": "app/models",
+            "Vertex\\Core\\Traits\\": "app/core/traits"
        	}
     }
 }
