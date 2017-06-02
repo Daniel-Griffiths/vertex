@@ -4,33 +4,28 @@ namespace Vertex\Core;
 
 use \FastRoute\Dispatcher;
 
-/*  
-|-------------------------------------------------------------------------- 
-| Router Class
-|--------------------------------------------------------------------------
-|
-| This acts as a simple wrapper around FastRoute
-|
-*/
-
 class Router   
 { 
 
     /**
-     * Placeholder for the dispatcher class
+     * Placeholder for the dispatcher class.
+     * 
      * @var object
      */
     private $dispatcher;
 
     /**
-     * Main controller namespace
+     * Main controller namespace.
+     * 
      * @var string
      */
     private $namespace = 'Vertex\\Controller\\';
 
     /**
-     * Inject any dependencies 
-     * @param object $dispatcher 
+     * Create a new router.
+     *
+     * @var \FastRoute\simpleDispatcher
+     * @return void
      */
     public function __construct($dispatcher)
     {
@@ -38,7 +33,9 @@ class Router
     }
 
     /**
-     * Dispatch
+     * Dispatch the route.
+     *
+     * @return void
      */
     public function dispatch()
     {
@@ -58,7 +55,8 @@ class Router
     }
 
     /**
-     * Returns the current route information
+     * Returns the current route information.
+     * 
      * @return array
      */
     public function info()
@@ -67,7 +65,8 @@ class Router
     }
 
     /**
-     * Route Found
+     * Check if a route was found.
+     * 
      * @param  string $handler    
      * @param  array $parameters 
      */
@@ -85,7 +84,8 @@ class Router
     }
 
     /**
-     * Handle the callback
+     * Handle the callback.
+     * 
      * @param  string $callback   
      * @param  array $parameters 
      */
@@ -97,7 +97,8 @@ class Router
     }
 
     /**
-     * Error responce
+     * Error responce.
+     * 
      * @param  string $type        
      * @param  string $description 
      */

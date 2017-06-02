@@ -5,23 +5,12 @@ namespace Vertex\Core;
 use Exception;
 use PDO;
 
-/*  
-|-------------------------------------------------------------------------- 
-| Database Class
-|--------------------------------------------------------------------------
-|
-| Allows your app to connect to the database. You can 
-| disable this in the configuration file if 
-| database functionality is not needed.
-|
-*/
-
 class Database
 {
     /**
      * Connect to the appropriate database
      * based on the details specified in
-     * the configuration file
+     * the configuration file.
      * 
      * @param  array  $config 
      * @return PDO       
@@ -42,7 +31,8 @@ class Database
     }
 
     /**
-     * Load the configuration
+     * Load the configuration.
+     * 
      * @param  array  $config 
      * @return PDO
      */

@@ -4,22 +4,14 @@ namespace Vertex\Core;
 
 use Jenssegers\Blade\Blade;
 
-/*  
-|-------------------------------------------------------------------------- 
-| View Class
-|--------------------------------------------------------------------------
-|
-| This allows your app to render templates!
-|
-*/
-
 class View
 {
     /**
-     * Renders a view
+     * Renders a view.
+     * 
      * @param  string $view       
      * @param  array  $parameters 
-     * @return view
+     * @return \Jenssegers\Blade\Blade
      */
     public static function render(string $view, array $parameters = [])
     {
