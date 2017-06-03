@@ -1,7 +1,7 @@
 # Vertex
 A simple PHP framework
 
-[![CircleCI](https://circleci.com/gh/Daniel-Griffiths/Vertex.svg?style=shield)](https://circleci.com/gh/Daniel-Griffiths/Vertex)
+[![CircleCI](https://circleci.com/gh/Daniel-Griffiths/vertex.svg?style=shield)](https://circleci.com/gh/Daniel-Griffiths/vertex)
 
 ## Requirements
 Vertex makes use of [Composer](https://getcomposer.org/) to autoload its dependencies. Be sure to run the following command after downloading the framework.
