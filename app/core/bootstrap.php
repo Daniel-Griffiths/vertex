@@ -27,12 +27,11 @@ date_default_timezone_set('Europe/London');
 |
 */
 
+use Whoops\Handler\PrettyPageHandler;
+use Whoops\Run as Whoops;
 use Vertex\Core\Router;
 use Vertex\Core\View;
 use Dotenv\Dotenv;
-
-use Whoops\Handler\PrettyPageHandler;
-use Whoops\Run as Whoops;
 
 /*
 |--------------------------------------------------------------------------
