@@ -12,7 +12,7 @@ class Redirect
      */
     public static function to($url)
     {
-		self::createRedirect($url);
+	self::createRedirect($url);
     }
 
     /**
