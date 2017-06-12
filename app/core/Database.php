@@ -44,9 +44,9 @@ class Database
     {
         switch ($config['connection']) {
             case 'mysql':
-                return $connection = 'mysql:host=' . $config['mysql']['host'] . ';dbname=' . $config['mysql']['database'];
+                return 'mysql:host=' . $config['mysql']['host'] . ';dbname=' . $config['mysql']['database'];
             case 'sqlite':
-                return $connection = 'sqlite:' . __DIR__ . '/database/' . $config['sqlite']['database'] . '.sqlite';
+                return 'sqlite:' . __DIR__ . '/database/' . $config['sqlite']['database'] . '.sqlite';
             default:
                 throw new Exception('Connection type not supported');
         }
