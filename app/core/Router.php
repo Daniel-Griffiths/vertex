@@ -4,9 +4,8 @@ namespace Vertex\Core;
 
 use \FastRoute\Dispatcher;
 
-class Router   
+class Router
 { 
-
     /**
      * Placeholder for the dispatcher class.
      * 
