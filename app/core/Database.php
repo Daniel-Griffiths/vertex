@@ -11,26 +11,28 @@ class Database
     use SingletonTrait;
 
     /**
+     * The default PDO connection options.
+     * 
+     * @var array
+     */
+    protected $options = [
+        PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION,
+        PDO::ATTR_DEFAULT_FETCH_MODE => PDO::FETCH_OBJ
+    ];
+
+    /**
      * Connect to the appropriate database
      * based on the details specified in
      * the configuration file.
      * 
      * @param  array  $config 
-     * @return PDO|bool       
+     * @return PDO       
      */
     public function connection(array $config)
     {
-        if ($config['enabled'] == 'false') {
-            return false;
-        }
-
-        try{
-            $instance = new PDO($this->loadConfig($config), $config['mysql']['username'], $config['mysql']['password']);
-            $instance->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-            $instance->setAttribute(PDO::ATTR_DEFAULT_FETCH_MODE, PDO::FETCH_OBJ);
+        if ($config['enabled'] == 'true') {
+            $instance = new PDO($this->loadConfig($config), $config['mysql']['username'], $config['mysql']['password'], $this->options);
             return $instance;
-        } catch (\PDOException $e) {
-            die($e->getMessage());
         }
     }
 
