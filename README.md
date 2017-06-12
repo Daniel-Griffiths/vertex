@@ -2,6 +2,7 @@
 A simple PHP framework
 
 [![CircleCI](https://circleci.com/gh/Daniel-Griffiths/vertex.svg?style=shield)](https://circleci.com/gh/Daniel-Griffiths/vertex)
+[![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/Daniel-Griffiths/vertex/badges/quality-score.png?b=master)](https://scrutinizer-ci.com/g/Daniel-Griffiths/vertex/?branch=master)
 [![CircleCI](https://poser.pugx.org/laravel/framework/license.svg)](https://circleci.com/gh/Daniel-Griffiths/vertex)
 
 ## Requirements
