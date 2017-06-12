@@ -16,7 +16,7 @@ class Database
      * the configuration file.
      * 
      * @param  array  $config 
-     * @return PDO       
+     * @return PDO|bool       
      */
     public function connection(array $config)
     {
@@ -29,7 +29,7 @@ class Database
             $instance->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
             $instance->setAttribute(PDO::ATTR_DEFAULT_FETCH_MODE, PDO::FETCH_OBJ);
             return $instance;
-        } catch (PDOException $e) {
+        } catch (\PDOException $e) {
             die($e->getMessage());
         }
     }
@@ -38,7 +38,7 @@ class Database
      * Load the configuration.
      * 
      * @param  array  $config 
-     * @return PDO
+     * @return string
      */
     public function loadConfig(array $config)
     {
