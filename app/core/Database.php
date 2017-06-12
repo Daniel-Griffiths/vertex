@@ -26,7 +26,7 @@ class Database
      * the configuration file.
      * 
      * @param  array  $config 
-     * @return PDO       
+     * @return PDO|bool       
      */
     public function connection(array $config)
     {
@@ -34,6 +34,7 @@ class Database
             $instance = new PDO($this->loadConfig($config), $config['mysql']['username'], $config['mysql']['password'], $this->options);
             return $instance;
         }
+        return false;
     }
 
     /**
