@@ -34,6 +34,5 @@ class Redirect
     public static function createRedirect($location)
     {
         header('location:' . $location);
-        die;	
     }
 }
