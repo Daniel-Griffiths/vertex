@@ -5,10 +5,9 @@ use Vertex\Core\Database;
 
 class DatabaseTest extends TestCase
 {
-    public function testConnectionDisabled()
+    public function testExpectException()
     {
-        $this->assertFalse(
-        	(new Database)->connection(['enabled' => 'false'])
-        );
+        $this->expectException(Exception::class);
+        (new Database)->connection(['connection' => 'test']);
     }
 }

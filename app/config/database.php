@@ -11,7 +11,6 @@ return [
 | specify the connection details below.
 |
 */
-    'enabled' => getenv('DB_ENABLED'),
     'connection' => getenv('DB_CONNECTION'),
     'sqlite' => [
         'database' => getenv('DB_DATABASE')

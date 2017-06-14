@@ -3,7 +3,6 @@
 namespace Vertex\Core;
 
 use Vertex\Core\Traits\SingletonTrait;
-use Exception;
 use PDO;
 
 class Database
@@ -30,27 +29,29 @@ class Database
      */
     public function connection(array $config)
     {
-        if ($config['enabled'] == 'true') {
-            return new PDO($this->loadConfig($config), $config['mysql']['username'], $config['mysql']['password'], $this->options);
-        }
-        return false;
+        return new PDO(
+            $this->getDsn($config), 
+            $config['mysql']['username'], 
+            $config['mysql']['password'], 
+            $this->options
+        );
     }
 
     /**
-     * Load the configuration.
+     * Get the data source name.
      * 
      * @param  array  $config 
      * @return string
      */
-    public function loadConfig(array $config)
+    protected function getDsn(array $config)
     {
         switch ($config['connection']) {
             case 'mysql':
                 return 'mysql:host=' . $config['mysql']['host'] . ';dbname=' . $config['mysql']['database'];
             case 'sqlite':
-                return 'sqlite:' . __DIR__ . '/database/' . $config['sqlite']['database'] . '.sqlite';
+                return 'sqlite:' . $config['sqlite']['database'] . '.sqlite';
             default:
-                throw new Exception('Connection type not supported');
+                throw new \Exception('Connection type not supported');
         }
     }
 }
