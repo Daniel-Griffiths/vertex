@@ -31,8 +31,7 @@ class Database
     public function connection(array $config)
     {
         if ($config['enabled'] == 'true') {
-            $instance = new PDO($this->loadConfig($config), $config['mysql']['username'], $config['mysql']['password'], $this->options);
-            return $instance;
+            return new PDO($this->loadConfig($config), $config['mysql']['username'], $config['mysql']['password'], $this->options);
         }
         return false;
     }
