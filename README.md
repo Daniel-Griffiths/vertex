@@ -39,7 +39,6 @@ Finally run the `gulp` commmand on the root of your project. This will automatic
 All configuration options are specified in the `.env` file in the root directory. By default you will get an example file to get you started. 
 
 ```
-DB_ENABLED=false 
 DB_CONNECTION=mysql
 DB_HOST=127.0.0.1
 DB_PORT=3306
