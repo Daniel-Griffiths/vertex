@@ -25,7 +25,7 @@ class Database
      * the configuration file.
      * 
      * @param  array  $config 
-     * @return PDO|bool       
+     * @return PDO     
      */
     public function connection(array $config)
     {
