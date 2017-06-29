@@ -1,6 +1,6 @@
 /*  
 |-------------------------------------------------------------------------- 
-| Include Dependencies
+| Require Dependencies
 |--------------------------------------------------------------------------
 |
 */
@@ -13,14 +13,14 @@ var sourcemaps = require('gulp-sourcemaps');
 
 /*  
 |-------------------------------------------------------------------------- 
-| Variables
+| Asset Paths
 |--------------------------------------------------------------------------
 |
 */
 
-/* css */
 var css_source = './app/resources/assets/css/**/*.styl';
 var css_dest = './public/assets/css';
+var php_source = './app/**/*.php';
 
 /*  
 |-------------------------------------------------------------------------- 
@@ -31,7 +31,7 @@ var css_dest = './public/assets/css';
 
 gulp.task('watch', function() {
   gulp.watch(css_source, [browserSync.reload]);
-  gulp.watch('**/*.php', [browserSync.reload]);
+  gulp.watch(php_source, [browserSync.reload]);
 });
 
 /*  
@@ -43,7 +43,6 @@ gulp.task('watch', function() {
 
 gulp.task('browser-sync', function() {
     browserSync({
-        proxy: 'vertex.dev',
         notify: false
     });
 });
@@ -55,7 +54,7 @@ gulp.task('browser-sync', function() {
 |
 */
 
-gulp.task('compile-css', function () {
+gulp.task('css', function () {
   return gulp.src(css_source)
   	.pipe(sourcemaps.init())
     .pipe(stylus({
@@ -73,6 +72,6 @@ gulp.task('compile-css', function () {
 |
 */
 
-gulp.task('default', ['compile-css', 'browser-sync', 'watch']);
+gulp.task('default', ['css', 'browser-sync', 'watch']);
 
  
