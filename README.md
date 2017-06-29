@@ -99,6 +99,3 @@ Here is an example blade template:
     </body>
 </html>
 ```
-
-## Email
-Vertex uses PHPMailer to send emails. There are no fancy wrapper classes as of yet, however all the standard methods defined in the [PHPMailer](https://github.com/PHPMailer/PHPMailer) documentation are available.

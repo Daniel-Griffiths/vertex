@@ -12,10 +12,8 @@
     "require": {
         "vlucas/phpdotenv": "^2.4",
         "jenssegers/blade": "^1.1",
-        "phpmailer/phpmailer": "^5.2.23",
         "nikic/fast-route": "^1.2",
-        "filp/whoops": "^2.1",
-        "symfony/console": "^3.2"
+        "filp/whoops": "^2.1"
     },
     "autoload": {
         "psr-4": {
