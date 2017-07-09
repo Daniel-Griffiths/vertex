@@ -33,7 +33,7 @@ After that you will then need to run the npm install command to pull in all of t
 npm install
 ```
 
-Finally run the `gulp` commmand on the root of your project. This will automatically create a local php server to get you up and running. 
+Finally run the `gulp` commmand on the root of your project. 
 
 ## Configuration
 All configuration options are specified in the `.env` file in the root directory. By default you will get an example file to get you started. 
