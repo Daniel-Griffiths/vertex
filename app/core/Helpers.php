@@ -27,7 +27,7 @@ if(!function_exists('dd')){
 if(!function_exists('view')){
 	function view(string $view, array $parameters = [])
 	{
-        return View::render($view, $parameters);
+		return View::render($view, $parameters);
 	}
 }
 
@@ -40,7 +40,7 @@ if(!function_exists('view')){
 if(!function_exists('redirect')){
 	function redirect($url)
 	{
-        return Redirect::to($url);
+		return Redirect::to($url);
 	}
 }
 
@@ -52,6 +52,6 @@ if(!function_exists('redirect')){
 if(!function_exists('back')){
 	function back()
 	{
-        return Redirect::back();
+		return Redirect::back();
 	}
 }
