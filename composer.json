@@ -21,7 +21,8 @@
             "Vertex\\Controller\\": "app/controllers",
             "Vertex\\Model\\": "app/models",
             "Vertex\\Core\\Traits\\": "app/core/traits"
-       	}
+       	},
+        "files": ["app/core/Helpers.php"]
     },
     "scripts": {
         "post-install-cmd": [
