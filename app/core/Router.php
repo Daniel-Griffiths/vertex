@@ -96,7 +96,7 @@ class Router
     }
 
     /**
-     * Error responce.
+     * Error response.
      * 
      * @param  string $type        
      * @param  string $description 
