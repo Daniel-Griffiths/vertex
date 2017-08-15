@@ -31,7 +31,7 @@ class Redirect
      * @param  string $location 
      * @return void
      */
-    public static function createRedirect($location)
+    protected static function createRedirect($location)
     {
         header('location:' . $location);
     }
