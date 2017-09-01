@@ -71,15 +71,20 @@ class Router
      */
     private function found($handler, $parameters)
     {
-        /* its a closure */
+        // its a closure
         if (is_callable($handler)) {
             return $this->handle($handler, $parameters);
         }
 
-        /* its a class */
+        // its a class
         list($class, $method) = explode("@", $handler, 2);
         $class = $this->namespace . $class;
-        return $this->handle([new $class, $method], $parameters);        
+        
+        // inject any dependencies
+        $parameters = Container::resolve($class, $method, $parameters);
+        $construct = Container::resolve($class, '__construct');
+        
+        return $this->handle([new $class(...$construct), $method], $parameters);        
     }
 
     /**
