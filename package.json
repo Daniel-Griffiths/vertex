@@ -17,7 +17,7 @@
     "url": "https://github.com/Daniel-Griffiths/Vertex/issues"
   },
   "scripts": {
-    "postinstall": "gulp"
+    "postinstall": "gulp css"
   },
   "devDependencies": {
     "browser-sync": "^2.18.12",
