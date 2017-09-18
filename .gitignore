@@ -1,6 +1,6 @@
 /.env
 /vendor
 /node_modules
-/app/core/cache/views/
+/storage/cache/views/
 /public/assets/css/app.css
 /public/assets/css/app.css.map
