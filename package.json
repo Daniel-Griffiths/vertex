@@ -2,7 +2,9 @@
   "name": "vertex",
   "version": "1.0.0",
   "description": "A simple PHP framework",
+  "homepage": "https://github.com/Daniel-Griffiths/Vertex#readme",
   "main": "index.js",
+  "license": "ISC",
   "directories": {
     "test": "tests"
   },
@@ -11,11 +13,12 @@
     "url": "git+https://github.com/Daniel-Griffiths/Vertex.git"
   },
   "author": "Daniel Griffiths",
-  "license": "ISC",
   "bugs": {
     "url": "https://github.com/Daniel-Griffiths/Vertex/issues"
   },
-  "homepage": "https://github.com/Daniel-Griffiths/Vertex#readme",
+  "scripts": {
+    "postinstall": "gulp"
+  },
   "devDependencies": {
     "browser-sync": "^2.18.12",
     "gulp": "^3.9.1",
