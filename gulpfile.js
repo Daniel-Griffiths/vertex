@@ -18,7 +18,7 @@ var sourcemaps = require('gulp-sourcemaps');
 |
 */
 
-var css_source = './app/resources/assets/css/**/*.styl';
+var css_source = './resources/assets/css/**/*.styl';
 var css_dest = './public/assets/css';
 var php_source = './app/**/*.php';
 
