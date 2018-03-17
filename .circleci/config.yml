@@ -10,6 +10,7 @@ jobs:
       - run: sudo apt install -y libsqlite3-dev zlib1g-dev
       - run: sudo docker-php-ext-install zip
       - run: sudo composer self-update
+      - run: sudo docker-php-ext-install pdo_mysql
       - restore_cache:
           keys:
             - composer-v1-{{ checksum "composer.lock" }}
