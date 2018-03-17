@@ -10,9 +10,9 @@ class Redirect
      * @param  string $url 
      * @return void
      */
-    public static function to($url)
+    public static function to($url): void
     {
-	self::createRedirect($url);
+	   self::createRedirect($url);
     }
 
     /**
@@ -20,7 +20,7 @@ class Redirect
      * 
      * @return void
      */
-    public static function back()
+    public static function back(): void
     {
         self::createRedirect($_SERVER['HTTP_REFERER']);
     }
@@ -31,7 +31,7 @@ class Redirect
      * @param  string $location 
      * @return void
      */
-    protected static function createRedirect($location)
+    protected static function createRedirect($location): void
     {
         header('location:' . $location);
     }
