@@ -5,11 +5,11 @@
 |
 */
 
-var gulp = require('gulp');
-var watch = require('gulp-watch');
-var stylus = require('gulp-stylus');
-var browserSync = require('browser-sync');
-var sourcemaps = require('gulp-sourcemaps');
+const gulp = require('gulp');
+const watch = require('gulp-watch');
+const stylus = require('gulp-stylus');
+const browserSync = require('browser-sync');
+const sourcemaps = require('gulp-sourcemaps');
 
 /*  
 |-------------------------------------------------------------------------- 
@@ -18,9 +18,9 @@ var sourcemaps = require('gulp-sourcemaps');
 |
 */
 
-var css_source = './resources/assets/css/**/*.styl';
-var css_dest = './public/assets/css';
-var php_source = './app/**/*.php';
+const css_source = './resources/assets/css/**/*.styl';
+const css_dest = './public/assets/css';
+const php_source = './app/**/*.php';
 
 /*  
 |-------------------------------------------------------------------------- 
@@ -29,9 +29,9 @@ var php_source = './app/**/*.php';
 |
 */
 
-gulp.task('watch', function() {
-  gulp.watch(css_source, [browserSync.reload]);
-  gulp.watch(php_source, [browserSync.reload]);
+gulp.task('watch', () => {
+  gulp.watch(css_source, gulp.series(browserSync.reload));
+  gulp.watch(php_source, gulp.series(browserSync.reload));
 });
 
 /*  
@@ -41,7 +41,7 @@ gulp.task('watch', function() {
 |
 */
 
-gulp.task('browser-sync', function() {
+gulp.task('browser-sync', () => {
     browserSync({
         notify: false
     });
@@ -54,7 +54,7 @@ gulp.task('browser-sync', function() {
 |
 */
 
-gulp.task('css', function () {
+gulp.task('css', () => {
   return gulp.src(css_source)
   	.pipe(sourcemaps.init())
     .pipe(stylus({
@@ -72,6 +72,6 @@ gulp.task('css', function () {
 |
 */
 
-gulp.task('default', ['css', 'browser-sync', 'watch']);
+gulp.task('default', gulp.series(gulp.parallel('css', 'browser-sync', 'watch')));
 
  
