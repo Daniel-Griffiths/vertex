@@ -5,7 +5,7 @@ use Vertex\Core\Redirect;
 
 class RedirectTest extends TestCase
 {
-	/**
+    /**
      * @runInSeparateProcess
      */
     public function testRedirectTo()

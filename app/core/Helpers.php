@@ -1,4 +1,4 @@
-<?php 
+<?php
 
 use Vertex\Core\View;
 use Vertex\Core\Redirect;
@@ -9,7 +9,7 @@ use Vertex\Core\Redirect;
  * @param  mixed $data 
  * @return void
  */
-if(!function_exists('dd')){
+if (!function_exists('dd')) {
 	function dd(...$data)
 	{
 		var_dump(...$data);
@@ -24,7 +24,7 @@ if(!function_exists('dd')){
  * @param  array  $parameters 
  * @return \Jenssegers\Blade\Blade
  */
-if(!function_exists('view')){
+if (!function_exists('view')) {
 	function view(string $view, array $parameters = [])
 	{
 		return View::render($view, $parameters);
@@ -37,7 +37,7 @@ if(!function_exists('view')){
  * @param  string $url 
  * @return void
  */
-if(!function_exists('redirect')){
+if (!function_exists('redirect')) {
 	function redirect($url)
 	{
 		return Redirect::to($url);
@@ -49,7 +49,7 @@ if(!function_exists('redirect')){
  * 
  * @return void
  */
-if(!function_exists('back')){
+if (!function_exists('back')) {
 	function back()
 	{
 		return Redirect::back();

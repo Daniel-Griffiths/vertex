@@ -2,8 +2,8 @@
 
 namespace Vertex\Core;
 
-use Vertex\Core\Traits\SingletonTrait;
 use PDO;
+use Vertex\Core\Traits\SingletonTrait;
 
 class Database
 {
@@ -31,9 +31,9 @@ class Database
     public function connection(array $config)
     {
         return new PDO(
-            $this->getDsn($config), 
-            $config['mysql']['username'], 
-            $config['mysql']['password'], 
+            $this->getDsn($config),
+            $config['mysql']['username'],
+            $config['mysql']['password'],
             $this->options
         );
     }

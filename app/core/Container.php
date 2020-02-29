@@ -6,7 +6,7 @@ use ReflectionClass;
 
 class Container
 {
- 	/**
+    /**
      * Inversion of control container, allows method's to request
      * thier dependencies rather than passing them
      * to the method directly.
@@ -19,19 +19,15 @@ class Container
     {
         $reflector = new ReflectionClass($class);
         $reflectedParameters = $reflector->getMethod($method)->getParameters();
-        $resolvedParameters = [];
 
-        foreach($reflectedParameters as $parameter)
-        {
+        return array_map(function ($parameter) use ($parameters) {
             $reflectedClass = @$parameter->getClass()->name;
 
-            if(!empty($reflectedClass)){
-            	$reflectedClass = $reflectedClass;
-            	$resolvedParameters[] = new $reflectedClass;
-            } else {
-            	$resolvedParameters[] = $parameters[$parameter->name]; 
+            if (!empty($reflectedClass)) {
+                return new $reflectedClass;
             }
-        }  
-        return  $resolvedParameters;    
+
+            return $parameters[$parameter->name];
+        }, $reflectedParameters);
     }
 }

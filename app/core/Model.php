@@ -4,11 +4,11 @@ namespace Vertex\Core;
 
 abstract class Model
 {
-	/**
-	 * The database instance
+    /**
+     * The database instance
      * 
-	 * @var \PDO
-	 */
+     * @var \PDO
+     */
     protected $database;
 
     /**

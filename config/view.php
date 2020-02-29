@@ -2,7 +2,7 @@
 
 return [
 
-/*
+    /*
 |--------------------------------------------------------------------------
 | View Configuration
 |--------------------------------------------------------------------------
@@ -11,6 +11,6 @@ return [
 | You can specify the details below.
 |
 */
-    'cache' =>  __DIR__.'/../storage/cache/views/'
-    
+    'cache' =>  __DIR__ . '/../storage/cache/views/'
+
 ];

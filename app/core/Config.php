@@ -13,6 +13,6 @@ class Config
      */
     public static function get(string $file)
     {
-        return require __DIR__.'/../../config/' . $file . '.php';
+        return require __DIR__ . '/../../config/' . $file . '.php';
     }
 }

@@ -2,8 +2,8 @@
 
 namespace Vertex\Controller;
 
-use Vertex\Model\ExampleModel;
 use Vertex\Core\Controller;
+use Vertex\Model\ExampleModel;
 
 class ExampleController extends Controller
 {

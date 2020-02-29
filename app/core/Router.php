@@ -1,11 +1,11 @@
 <?php
 
-namespace Vertex\Core; 
+namespace Vertex\Core;
 
 use \FastRoute\Dispatcher;
 
 class Router
-{ 
+{
     /**
      * Placeholder for the dispatcher class.
      * 
@@ -38,9 +38,9 @@ class Router
      */
     public function dispatch()
     {
-        $routeInfo = $this->info();
+        [$method, $handler, $parameters] = $this->info();
 
-        switch ($routeInfo[0]) {
+        switch ($method) {
             case Dispatcher::NOT_FOUND:
                 echo $this->error('404', 'Page Could Not Be Found');
                 break;
@@ -48,7 +48,7 @@ class Router
                 echo $this->error('405', 'Method is not allowed');
                 break;
             case Dispatcher::FOUND:
-                echo $this->found($routeInfo[1], $routeInfo[2]);
+                echo $this->found($handler, $parameters);
                 break;
         }
     }
@@ -77,14 +77,14 @@ class Router
         }
 
         // its a class
-        list($class, $method) = explode("@", $handler, 2);
+        [$class, $method] = explode("@", $handler, 2);
         $class = $this->namespace . $class;
-        
+
         // inject any dependencies
         $parameters = Container::resolve($class, $method, $parameters);
         $construct = Container::resolve($class, '__construct');
-        
-        return $this->handle([new $class(...$construct), $method], $parameters);        
+
+        return $this->handle([new $class(...$construct), $method], $parameters);
     }
 
     /**
@@ -95,9 +95,9 @@ class Router
      */
     public function handle($callback, ...$parameters)
     {
-        $callback = call_user_func_array($callback, ...$parameters);
-        
-        echo (is_array($callback)) ? json_encode($callback) : $callback;
+        $result = $callback(...$parameters);
+
+        echo (is_array($result)) ? json_encode($result) : $result;
     }
 
     /**
@@ -112,6 +112,6 @@ class Router
             'title' => $type,
             'error_number' => $type,
             'error_message' => $description
-        ]);        
+        ]);
     }
 }

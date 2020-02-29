@@ -27,10 +27,10 @@ date_default_timezone_set('Europe/London');
 |
 */
 
-use Whoops\Handler\PrettyPageHandler;
-use Whoops\Run as Whoops;
-use Vertex\Core\Router;
 use Dotenv\Dotenv;
+use Vertex\Core\Router;
+use Whoops\Run as Whoops;
+use Whoops\Handler\PrettyPageHandler;
 
 /*
 |--------------------------------------------------------------------------
@@ -48,7 +48,7 @@ session_start();
 |
 */
 
-require __DIR__.'/../../vendor/autoload.php';
+require __DIR__ . '/../../vendor/autoload.php';
 
 /*
 |--------------------------------------------------------------------------
@@ -57,7 +57,8 @@ require __DIR__.'/../../vendor/autoload.php';
 |
 */
 
-(new Dotenv(__DIR__.'/../..'))->load();
+$dotenv = Dotenv::createMutable(__DIR__ . '/../..');
+$dotenv->load();
 
 /*
 |--------------------------------------------------------------------------
@@ -79,11 +80,10 @@ require __DIR__.'/../../vendor/autoload.php';
 
 $router = new Router(
     FastRoute\simpleDispatcher(function (FastRoute\RouteCollector $route) {
-        foreach(glob(__DIR__.'/../../routes/*.php') as $file){
-        	require $file;
+        foreach (glob(__DIR__ . '/../../routes/*.php') as $file) {
+            require $file;
         }
     })
 );
-
 
 $router->dispatch();

@@ -8,7 +8,7 @@ class ViewTest extends TestCase
 {
     public function testViewRender()
     {
-        $this->assertNotEmpty(View::render('errors.request'),'test');
+        $this->assertNotEmpty(View::render('errors.request'), 'test');
     }
 
     /**
