@@ -1630,20 +1630,23 @@
         },
         {
             "name": "phpstan/phpstan",
-            "version": "0.12.11",
+            "version": "0.12.79",
             "source": {
                 "type": "git",
                 "url": "https://github.com/phpstan/phpstan.git",
-                "reference": "ca5f2b7cf81c6d8fba74f9576970399c5817e03b"
+                "reference": "dd7769915648b704b9bd12925994457f1c2c8442"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/phpstan/phpstan/zipball/ca5f2b7cf81c6d8fba74f9576970399c5817e03b",
-                "reference": "ca5f2b7cf81c6d8fba74f9576970399c5817e03b",
+                "url": "https://api.github.com/repos/phpstan/phpstan/zipball/dd7769915648b704b9bd12925994457f1c2c8442",
+                "reference": "dd7769915648b704b9bd12925994457f1c2c8442",
                 "shasum": ""
             },
             "require": {
-                "php": "^7.1"
+                "php": "^7.1|^8.0"
+            },
+            "conflict": {
+                "phpstan/phpstan-shim": "*"
             },
             "bin": [
                 "phpstan",
@@ -1665,7 +1668,25 @@
                 "MIT"
             ],
             "description": "PHPStan - PHP Static Analysis Tool",
-            "time": "2020-02-16T14:00:29+00:00"
+            "support": {
+                "issues": "https://github.com/phpstan/phpstan/issues",
+                "source": "https://github.com/phpstan/phpstan/tree/0.12.79"
+            },
+            "funding": [
+                {
+                    "url": "https://github.com/ondrejmirtes",
+                    "type": "github"
+                },
+                {
+                    "url": "https://www.patreon.com/phpstan",
+                    "type": "patreon"
+                },
+                {
+                    "url": "https://tidelift.com/funding/github/packagist/phpstan/phpstan",
+                    "type": "tidelift"
+                }
+            ],
+            "time": "2021-02-25T16:44:57+00:00"
         },
         {
             "name": "phpunit/php-code-coverage",
@@ -2712,5 +2733,6 @@
     "prefer-stable": false,
     "prefer-lowest": false,
     "platform": [],
-    "platform-dev": []
+    "platform-dev": [],
+    "plugin-api-version": "2.0.0"
 }
