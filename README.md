@@ -2,9 +2,8 @@
 
 A simple PHP framework inspired by Laravel
 
-[![CircleCI](https://circleci.com/gh/Daniel-Griffiths/vertex.svg?style=shield)](https://circleci.com/gh/Daniel-Griffiths/vertex)
+[![GitHub Actions](https://github.com/Daniel-Griffiths/vertex/actions/workflows/tests.yml/badge.svg)](https://github.com/Daniel-Griffiths/vertex/actions)
 [![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/Daniel-Griffiths/vertex/badges/quality-score.png?b=master)](https://scrutinizer-ci.com/g/Daniel-Griffiths/vertex/?branch=master)
-[![CircleCI](https://poser.pugx.org/laravel/framework/license.svg)](https://circleci.com/gh/Daniel-Griffiths/vertex)
 
 ## Requirements
 

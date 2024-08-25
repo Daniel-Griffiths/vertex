@@ -9,14 +9,14 @@ abstract class Model
      * 
      * @var \PDO
      */
-    protected $database;
+    protected \PDO $database;
 
     /**
      * The table associated with the model
      * 
      * @var string
      */
-    protected $table;
+    protected string $table;
 
     /**
      * Create a new abstract model.

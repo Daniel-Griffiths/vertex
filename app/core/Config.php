@@ -11,7 +11,7 @@ class Config
      * @param  string $file 
      * @return array       
      */
-    public static function get(string $file)
+    public static function get(string $file): array
     {
         return require __DIR__ . '/../../config/' . $file . '.php';
     }

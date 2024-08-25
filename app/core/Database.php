@@ -14,7 +14,7 @@ class Database
      * 
      * @var array
      */
-    protected $options = [
+    protected array $options = [
         PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION,
         PDO::ATTR_DEFAULT_FETCH_MODE => PDO::FETCH_OBJ,
         PDO::MYSQL_ATTR_INIT_COMMAND => 'SET NAMES utf8'
@@ -28,7 +28,7 @@ class Database
      * @param  array  $config 
      * @return PDO     
      */
-    public function connection(array $config)
+    public function connection(array $config): PDO
     {
         return new PDO(
             $this->getDsn($config),
@@ -44,15 +44,12 @@ class Database
      * @param  array  $config 
      * @return string
      */
-    protected function getDsn(array $config)
+    protected function getDsn(array $config): string
     {
-        switch ($config['connection']) {
-            case 'mysql':
-                return 'mysql:host=' . $config['mysql']['host'] . ';dbname=' . $config['mysql']['database'];
-            case 'sqlite':
-                return 'sqlite:' . $config['sqlite']['database'] . '.sqlite';
-            default:
-                throw new \Exception('Connection type not supported');
-        }
+        return match ($config['connection']) {
+            'mysql' => 'mysql:host=' . $config['mysql']['host'] . ';dbname=' . $config['mysql']['database'],
+            'sqlite' => 'sqlite:' . $config['sqlite']['database'] . '.sqlite',
+            default => throw new \Exception('Connection type not supported'),
+        };
     }
 }

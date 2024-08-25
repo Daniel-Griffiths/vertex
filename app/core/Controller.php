@@ -4,7 +4,7 @@ namespace Vertex\Core;
 
 abstract class Controller
 {
-    protected $database;
+    protected ?Database $database;
 
     /**
      * Create a new abstract controller.

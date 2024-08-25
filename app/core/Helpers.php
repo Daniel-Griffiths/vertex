@@ -1,20 +1,23 @@
 <?php
 
+declare(strict_types=1);
+
 use Vertex\Core\View;
 use Vertex\Core\Redirect;
+use Illuminate\View\View as BladeView;
 
 /**
  * Dump the specified variables and end the script.
  * 
- * @param  mixed $data 
+ * @param  mixed ...$data 
  * @return void
  */
 if (!function_exists('dd')) {
-	function dd(...$data)
-	{
-		var_dump(...$data);
-		die;
-	}
+    function dd(...$data): void
+    {
+        var_dump(...$data);
+        die;
+    }
 }
 
 /**
@@ -22,13 +25,13 @@ if (!function_exists('dd')) {
  * 
  * @param  string $view       
  * @param  array  $parameters 
- * @return \Jenssegers\Blade\Blade
+ * @return BladeView
  */
 if (!function_exists('view')) {
-	function view(string $view, array $parameters = [])
-	{
-		return View::render($view, $parameters);
-	}
+    function view(string $view, array $parameters = []): BladeView
+    {
+        return View::render($view, $parameters);
+    }
 }
 
 /**
@@ -38,10 +41,10 @@ if (!function_exists('view')) {
  * @return void
  */
 if (!function_exists('redirect')) {
-	function redirect($url)
-	{
-		return Redirect::to($url);
-	}
+    function redirect(string $url): void
+    {
+        Redirect::to($url);
+    }
 }
 
 /**
@@ -50,8 +53,8 @@ if (!function_exists('redirect')) {
  * @return void
  */
 if (!function_exists('back')) {
-	function back()
-	{
-		return Redirect::back();
-	}
+    function back(): void
+    {
+        Redirect::back();
+    }
 }

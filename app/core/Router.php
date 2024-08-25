@@ -2,31 +2,36 @@
 
 namespace Vertex\Core;
 
-use \FastRoute\Dispatcher;
+use FastRoute\Dispatcher;
+use FastRoute\Dispatcher\Result\{
+    Matched,
+    NotMatched,
+    MethodNotAllowed
+};
 
 class Router
 {
     /**
      * Placeholder for the dispatcher class.
      * 
-     * @var object
+     * @var Dispatcher
      */
-    private $dispatcher;
+    private Dispatcher $dispatcher;
 
     /**
      * Main controller namespace.
      * 
      * @var string
      */
-    private $namespace = 'Vertex\\Controller\\';
+    private string $namespace = 'Vertex\\Controller\\';
 
     /**
      * Create a new router.
      *
-     * @var \FastRoute\simpleDispatcher
+     * @param Dispatcher $dispatcher
      * @return void
      */
-    public function __construct($dispatcher)
+    public function __construct(Dispatcher $dispatcher)
     {
         $this->dispatcher = $dispatcher;
     }
@@ -36,44 +41,46 @@ class Router
      *
      * @return void
      */
-    public function dispatch()
+    public function dispatch(): void
     {
         $routeInfo = $this->info();
 
-        if($routeInfo instanceof Dispatcher\Result\NotMatched) {
+        if ($routeInfo instanceof NotMatched) {
             echo $this->error('404', 'Page Could Not Be Found');
             return;
         }
 
-        if($routeInfo instanceof Dispatcher\Result\MethodNotAllowed) {
+        if ($routeInfo instanceof MethodNotAllowed) {
             echo $this->error('405', 'Method is not allowed');
             return;
         }
 
-        return $this->found($routeInfo[1], $routeInfo[2]);
+        $this->found($routeInfo[1], $routeInfo[2]);
     }
 
-    /**
-     * Returns the current route information.
-     * 
-     * @return array
-     */
-    public function info()
-    {
-        return $this->dispatcher->dispatch($_SERVER['REQUEST_METHOD'], strtok($_SERVER['REQUEST_URI'], '?'));
-    }
+/**
+ * Returns the current route information.
+ * 
+ * @return  Matched|NotMatched|MethodNotAllowed
+ */
+public function info():  Matched|NotMatched|MethodNotAllowed
+{
+    return $this->dispatcher->dispatch($_SERVER['REQUEST_METHOD'], strtok($_SERVER['REQUEST_URI'], '?'));
+}
 
     /**
      * Check if a route was found.
      * 
      * @param  string $handler    
      * @param  array $parameters 
+     * @return void
      */
-    private function found(string $handler, array $parameters)
+    private function found(string $handler, array $parameters): void
     {
         // its a closure
         if (is_callable($handler)) {
-            return $this->handle($handler, $parameters);
+            $this->handle($handler, $parameters);
+            return;
         }
 
         // its a class
@@ -84,20 +91,21 @@ class Router
         $parameters = Container::resolve($class, $method, $parameters);
         $construct = Container::resolve($class, '__construct');
 
-        return $this->handle([new $class(...$construct), $method], $parameters);
+        $this->handle([new $class(...$construct), $method], $parameters);
     }
 
     /**
      * Handle the callback.
      * 
-     * @param  string $callback   
+     * @param  callable $callback   
      * @param  array $parameters 
+     * @return void
      */
-    public function handle($callback, ...$parameters)
+    public function handle(callable $callback, ...$parameters): void
     {
         $result = $callback(...$parameters);
 
-        echo (is_array($result)) ? json_encode($result) : $result;
+        echo is_array($result) ? json_encode($result) : $result;
     }
 
     /**
@@ -105,8 +113,9 @@ class Router
      * 
      * @param  string $type        
      * @param  string $description 
+     * @return string
      */
-    private function error(string $type, string $description)
+    private function error(string $type, string $description): string
     {
         return View::render('errors.request', [
             'title' => $type,
