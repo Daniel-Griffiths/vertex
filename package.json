@@ -5,6 +5,9 @@
   "homepage": "https://github.com/Daniel-Griffiths/Vertex#readme",
   "main": "index.js",
   "license": "ISC",
+  "scripts": {
+    "start": "php -S localhost:8000 -t public"
+  },
   "directories": {
     "test": "tests"
   },
@@ -15,15 +18,5 @@
   "author": "Daniel Griffiths",
   "bugs": {
     "url": "https://github.com/Daniel-Griffiths/Vertex/issues"
-  },
-  "scripts": {
-    "postinstall": "gulp css"
-  },
-  "devDependencies": {
-    "browser-sync": "^2.26.7",
-    "gulp": "^4.0.2",
-    "gulp-sourcemaps": "^2.6.5",
-    "gulp-stylus": "^2.7.0",
-    "gulp-watch": "^5.0.1"
   }
 }

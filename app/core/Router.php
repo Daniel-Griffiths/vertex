@@ -38,19 +38,19 @@ class Router
      */
     public function dispatch()
     {
-        [$method, $handler, $parameters] = $this->info();
+        $routeInfo = $this->info();
 
-        switch ($method) {
-            case Dispatcher::NOT_FOUND:
-                echo $this->error('404', 'Page Could Not Be Found');
-                break;
-            case Dispatcher::METHOD_NOT_ALLOWED:
-                echo $this->error('405', 'Method is not allowed');
-                break;
-            case Dispatcher::FOUND:
-                echo $this->found($handler, $parameters);
-                break;
+        if($routeInfo instanceof Dispatcher\Result\NotMatched) {
+            echo $this->error('404', 'Page Could Not Be Found');
+            return;
         }
+
+        if($routeInfo instanceof Dispatcher\Result\MethodNotAllowed) {
+            echo $this->error('405', 'Method is not allowed');
+            return;
+        }
+
+        return $this->found($routeInfo[1], $routeInfo[2]);
     }
 
     /**

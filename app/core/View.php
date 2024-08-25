@@ -17,6 +17,6 @@ class View
     {
         $blade = new Blade(__DIR__ . '/../../resources/views/', Config::get('view')['cache']);
 
-        return $blade->make($view, $parameters);
+        return $blade->render($view, $parameters);
     }
 }

@@ -1,36 +1,41 @@
 {
-    "name": "daniel-griffiths/vertex",
-    "description": "A simple PHP framework",
-    "license": "MIT",
-    "keywords": ["php", "framework"],
-    "authors": [
-        {
-          "name": "Daniel Griffiths",
-          "email": "contact@danielgriffiths.me"
-        }
-    ],
-    "require": {
-        "vlucas/phpdotenv": "^4.0",
-        "jenssegers/blade": "^1.1",
-        "nikic/fast-route": "^1.3",
-        "filp/whoops": "^2.2"
-    },
-    "require-dev": {
-        "phpunit/phpunit": "^8.3.5",
-        "phpstan/phpstan": "^0.12"
-    },    
-    "autoload": {
-        "psr-4": {
-            "Vertex\\Core\\": "app/core",
-            "Vertex\\Controller\\": "app/controllers",
-            "Vertex\\Model\\": "app/models",
-            "Vertex\\Core\\Traits\\": "app/core/traits"
-       	},
-        "files": ["app/core/Helpers.php"]
-    },
-    "scripts": {
-        "post-install-cmd": [
-            "php -r \"file_exists('.env') || copy('.env.example', '.env');\""
-        ]
+  "name": "daniel-griffiths/vertex",
+  "description": "A simple PHP framework",
+  "license": "MIT",
+  "keywords": [
+    "php",
+    "framework"
+  ],
+  "authors": [
+    {
+      "name": "Daniel Griffiths",
+      "email": "contact@danielgriffiths.dev"
     }
+  ],
+  "require": {
+    "vlucas/phpdotenv": "^5.4",
+    "jenssegers/blade": "^1.1",
+    "nikic/fast-route": "2.0.0-beta1",
+    "filp/whoops": "^2.2"
+  },
+  "require-dev": {
+    "phpunit/phpunit": "^9.5",
+    "phpstan/phpstan": "^0.12"
+  },
+  "autoload": {
+    "psr-4": {
+      "Vertex\\Core\\": "app/core",
+      "Vertex\\Controller\\": "app/controllers",
+      "Vertex\\Model\\": "app/models",
+      "Vertex\\Core\\Traits\\": "app/core/traits"
+    },
+    "files": [
+      "app/core/Helpers.php"
+    ]
+  },
+  "scripts": {
+    "post-install-cmd": [
+      "php -r \"file_exists('.env') || copy('.env.example', '.env');\""
+    ]
+  }
 }
