@@ -69,7 +69,7 @@ class Router
      * @param  string $handler    
      * @param  array $parameters 
      */
-    private function found($handler, $parameters)
+    private function found(string $handler, array $parameters)
     {
         // its a closure
         if (is_callable($handler)) {
@@ -106,7 +106,7 @@ class Router
      * @param  string $type        
      * @param  string $description 
      */
-    private function error($type, $description)
+    private function error(string $type, string $description)
     {
         return View::render('errors.request', [
             'title' => $type,

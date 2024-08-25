@@ -15,7 +15,7 @@ class Container
      * @param string $method
      * @param array  $parameters
      */
-    public static function resolve($class, $method, $parameters = [])
+    public static function resolve(string $class, string $method, array $parameters = [])
     {
         $reflector = new ReflectionClass($class);
         $reflectedParameters = $reflector->getMethod($method)->getParameters();

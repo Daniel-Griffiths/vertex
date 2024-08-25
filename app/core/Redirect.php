@@ -10,7 +10,7 @@ class Redirect
      * @param  string $url 
      * @return void
      */
-    public static function to($url): void
+    public static function to(string $url): void
     {
         self::createRedirect($url);
     }
@@ -31,7 +31,7 @@ class Redirect
      * @param  string $location 
      * @return void
      */
-    protected static function createRedirect($location): void
+    protected static function createRedirect(string $location): void
     {
         header('location:' . $location);
     }

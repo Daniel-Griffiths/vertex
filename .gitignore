@@ -4,3 +4,4 @@
 /storage/cache/views/
 /public/assets/css/app.css
 /public/assets/css/app.css.map
+.phpunit.result.cache

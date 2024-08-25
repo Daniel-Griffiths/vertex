@@ -11,11 +11,10 @@ class ViewTest extends TestCase
         $this->assertNotEmpty(View::render('errors.request'), 'test');
     }
 
-    /**
-     * @expectedException InvalidArgumentException
-     */
     public function testViewThrowException()
     {
+        $this->expectException(InvalidArgumentException::class);
+
         View::render('fake-view-that-should-really-not-exist-4738274382');
     }
 }

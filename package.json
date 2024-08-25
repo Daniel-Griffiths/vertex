@@ -6,7 +6,8 @@
   "main": "index.js",
   "license": "ISC",
   "scripts": {
-    "start": "php -S localhost:8000 -t public"
+    "start": "php -S localhost:8000 -t public",
+    "test": "vendor/bin/phpunit"
   },
   "directories": {
     "test": "tests"
