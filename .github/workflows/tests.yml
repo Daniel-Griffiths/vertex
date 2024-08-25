@@ -9,8 +9,14 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
+      - name: Set up PHP
+        uses: shivammathur/setup-php@v2
+        with:
+          php-version: "8.3"
+          extensions: mbstring, dom, json, libxml, tokenizer, xml, xmlwriter
+
       - name: Install composer dependencies
         run: composer install --prefer-dist
 
       - name: Run PHPUnit
-        run: php8.3 vendor/bin/phpunit
+        run: vendor/bin/phpunit
